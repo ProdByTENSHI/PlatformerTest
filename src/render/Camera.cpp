@@ -17,13 +17,18 @@ namespace tenshi
 	void Camera::Update(Shader& shader)
 	{
 		if (glfwGetKey(g_Window, GLFW_KEY_W) == GLFW_PRESS)
-			m_Position += glm::vec3(0.0f, 1.0f, 0.0f) * g_DeltaTime;
+			m_Position += glm::vec3(0.0f, m_Speed, 0.0f) * g_DeltaTime;
 		if (glfwGetKey(g_Window, GLFW_KEY_S) == GLFW_PRESS)
-			m_Position += glm::vec3(0.0f, -1.0f, 0.0f) * g_DeltaTime;
+			m_Position += glm::vec3(0.0f, -m_Speed, 0.0f) * g_DeltaTime;
 		if (glfwGetKey(g_Window, GLFW_KEY_A) == GLFW_PRESS)
-			m_Position += glm::vec3(-1.0f, 0.0f, 0.0f) * g_DeltaTime;
+			m_Position += glm::vec3(-m_Speed, 0.0f, 0.0f) * g_DeltaTime;
 		if (glfwGetKey(g_Window, GLFW_KEY_D) == GLFW_PRESS)
-			m_Position += glm::vec3(1.0f, 0.0f, 0.0f) * g_DeltaTime;
+			m_Position += glm::vec3(m_Speed, 0.0f, 0.0f) * g_DeltaTime;
+
+		if (glfwGetKey(g_Window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS && m_Speed == INIT_SPEED)
+			m_Speed *= 3.0f;
+		else if (glfwGetKey(g_Window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
+			m_Speed = INIT_SPEED;
 
 		glm::mat4 _view = glm::lookAt(m_Position, m_Position + glm::vec3(0.0f, 0.0f, -1.0f), CAM_UP);
 

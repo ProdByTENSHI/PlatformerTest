@@ -16,7 +16,7 @@ namespace tenshi
 		m_SpriteShader->Unbind();
 	}
 
-	void MasterRenderer::AddSpriteEntity(SpriteEntity& entity)
+	void MasterRenderer::AddSpriteEntity(const SpriteEntity& entity)
 	{
 		for (auto& batch : m_SpriteBatches)
 		{

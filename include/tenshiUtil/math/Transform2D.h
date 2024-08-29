@@ -26,8 +26,8 @@ namespace tenshi
 
 		void Scale(const glm::vec2& scale)
 		{
-			m_Scale += scale;
-			m_ModelMatrix = glm::translate(m_ModelMatrix, glm::vec3(scale.x, scale.y, 0.0f));
+			m_Scale = scale;
+			m_ModelMatrix = glm::scale(m_ModelMatrix, glm::vec3(scale.x, scale.y, 0.0f));
 		}
 
 		void Scale(f32 scalar)

@@ -83,8 +83,14 @@ namespace tenshi
 			return;
 		}
 
+#ifdef _DEBUG
 		glEnable(GL_DEBUG_OUTPUT);
 		glDebugMessageCallback(glewMessageCallback, nullptr);
+#endif
+
+		// Enable Transparency
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 		glfwSetWindowSizeCallback(g_Window, [](GLFWwindow* window, i32 width, i32 height)
 			{
@@ -96,15 +102,20 @@ namespace tenshi
 
 		glViewport(0, 0, g_WindowWidth, g_WindowHeight);
 
-		// -- Init Systemss
+		// -- Init Global Systemss
 		g_ResourceManager = std::make_unique<ResourceManager>();
 		g_MasterRenderer = std::make_unique<MasterRenderer>();
 		g_EntityManager = std::make_unique<EntityManager>();
 		g_Camera = std::make_unique<Camera>();
 
-		SpriteEntity* _entity = &g_EntityManager->CreateEntity
-		(g_ResourceManager->GetTexture("Wood.png"));
-		g_MasterRenderer->AddSpriteEntity(*_entity);
+		const i32 _ENTITIES = 10;
+		for (i32 i = 0; i < _ENTITIES; i++)
+		{
+			SpriteEntity& entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
+				(g_ResourceManager->GetTexture("Wood.png"));
+			entity.m_Transform.Translate(glm::vec2(i, 0.0f));
+			g_MasterRenderer->AddSpriteEntity(entity);
+		}
 
 		m_InitStatus = true;
 	}

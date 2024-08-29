@@ -4,6 +4,7 @@
 #include <stack>
 #include <type_traits>
 #include <iostream>
+#include <memory>
 
 #include "entity/Entity.h"
 #include "tenshiUtil/Types.h"
@@ -18,7 +19,24 @@ namespace tenshi
 		u32 GetEntityCount();
 
 	public:
-		SpriteEntity& CreateEntity(std::shared_ptr<Texture> texture);
+		// [typename] T: Derived Class of Entity
+		// [typename] Args: Parameter Pack with all Arguments equals to the Constructor Args of T
+		template <typename T, typename... Args> T& CreateEntity(Args... args)
+		{
+			u32 _id = GetFreeId();
+
+			T* entity = new T(_id, args...);
+			m_Entities.insert(std::make_pair(_id, entity));
+
+			++m_TotalEntityCount;
+
+			return *entity;
+		}
+
+		template <typename T> T* GetEntity(u32 id)
+		{
+			dynamic_cast<T*>(m_Entities[id]);
+		}
 
 #pragma endregion
 

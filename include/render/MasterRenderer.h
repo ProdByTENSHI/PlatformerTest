@@ -17,7 +17,7 @@ namespace tenshi
 	public:
 		MasterRenderer();
 
-		void AddSpriteEntity(SpriteEntity& entity);
+		void AddSpriteEntity(const SpriteEntity& entity);
 
 		void Render();
 

@@ -1,20 +1,14 @@
 #include "entity/EntityManager.h"
 
+#include <string>
+
+#include "core/Globals.h"
+
 namespace tenshi
 {
 #pragma region Create Entity Method Overloads
-	SpriteEntity& EntityManager::CreateEntity(std::shared_ptr<Texture> texture)
-	{
-		u32 _id = GetFreeId();
-
-		SpriteEntity* _entity = new SpriteEntity(_id, texture);
-		m_Entities.insert(std::make_pair(_id, _entity));
-
-		return *_entity;
-	}
 
 #pragma endregion
-
 	u32 EntityManager::GetEntityCount()
 	{
 		return m_Entities.size();

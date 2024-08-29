@@ -20,6 +20,6 @@ namespace tenshi
 			delete m_Sprite;
 		}
 
-		const Sprite* m_Sprite = nullptr;
+		Sprite* m_Sprite = nullptr;
 	};
 }

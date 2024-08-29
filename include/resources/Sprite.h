@@ -14,10 +14,7 @@ namespace tenshi
 	{
 		Sprite(std::shared_ptr<Texture> texture) : m_Texture(texture) {}
 
-		// For Sprite Sheets -> Can be Pos 0 and size of Texture for entire Texture
-		Rect2D m_SrcRect;
-
 		Transform2D m_Transform;
-		const std::shared_ptr<Texture> m_Texture;
+		std::shared_ptr<Texture> m_Texture;
 	};
 }
