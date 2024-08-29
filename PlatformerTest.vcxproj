@@ -297,6 +297,7 @@
     <ClInclude Include="include\entity\SpriteEntity.h" />
     <ClInclude Include="include\entity\SpriteSheetEntity.h" />
     <ClInclude Include="include\memory\Ssbo.h" />
+    <ClInclude Include="include\render\Camera.h" />
     <ClInclude Include="include\render\MasterRenderer.h" />
     <ClInclude Include="include\render\SpriteBatch.h" />
     <ClInclude Include="include\resources\ResourceManager.h" />
@@ -676,6 +677,7 @@
     <ClCompile Include="src\entity\EntityManager.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\memory\Ssbo.cpp" />
+    <ClCompile Include="src\render\Camera.cpp" />
     <ClCompile Include="src\render\MasterRenderer.cpp" />
     <ClCompile Include="src\resources\ResourceManager.cpp" />
     <ClCompile Include="src\resources\Shader.cpp" />

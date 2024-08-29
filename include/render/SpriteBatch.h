@@ -13,10 +13,14 @@ namespace tenshi
 	// All Sprites that have the same Texture will be rendered in the same Batch)
 	struct SpriteBatch
 	{
+		explicit SpriteBatch(u32 id) : m_Id(id) {}
+
 		std::vector<const SpriteEntity*> m_Entities;
 
 		GLuint m_Vao = 0;
 		GLuint m_Vbo = 0;
+
+		const u32 m_Id = 0;
 
 		bool IsTextureInBatch(const SpriteEntity& entity)
 		{

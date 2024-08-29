@@ -3,7 +3,7 @@
 #include <functional>
 #include <list>
 
-namespace chroma
+namespace tenshi
 {
 	// TODO: Make Thead-Safe
 	//! An Event Handler is the Subscriber to an Event that calls a Function when notified by the Event

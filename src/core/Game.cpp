@@ -100,9 +100,10 @@ namespace tenshi
 		g_ResourceManager = std::make_unique<ResourceManager>();
 		g_MasterRenderer = std::make_unique<MasterRenderer>();
 		g_EntityManager = std::make_unique<EntityManager>();
+		g_Camera = std::make_unique<Camera>();
 
 		SpriteEntity* _entity = &g_EntityManager->CreateEntity
-		(g_ResourceManager->GetTexture("Gem_Merchant.png"));
+		(g_ResourceManager->GetTexture("Wood.png"));
 		g_MasterRenderer->AddSpriteEntity(*_entity);
 
 		m_InitStatus = true;
@@ -116,8 +117,15 @@ namespace tenshi
 
 	void Game::Update()
 	{
+		f32 _lastFrameTime = 0.0f;
+		f32 _currentFrameTime = 0.0f;
+
 		while (!glfwWindowShouldClose(g_Window) && m_InitStatus)
 		{
+			_currentFrameTime = glfwGetTime();
+			g_DeltaTime = _currentFrameTime - _lastFrameTime;
+			_lastFrameTime = _currentFrameTime;
+
 			glfwPollEvents();
 			glClearColor(0.2f, 0.2f, 0.5f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT);

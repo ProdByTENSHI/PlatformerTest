@@ -13,7 +13,7 @@ namespace tenshi
 		Ssbo(GLsizei size, const std::string& name);
 		~Ssbo();
 
-		u8 GetBufferBindingPoint(tenshi::Shader& shader);
+		GLuint GetBufferBindingPoint(tenshi::Shader& shader);
 		void BindToShader(tenshi::Shader& shader, u8 index);
 		void SubBufferData(GLintptr offset, GLsizei size, const void* data);
 

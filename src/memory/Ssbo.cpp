@@ -14,7 +14,7 @@ namespace tenshi
 		glDeleteBuffers(1, &m_Buffer);
 	}
 
-	u8 Ssbo::GetBufferBindingPoint(tenshi::Shader& shader)
+	GLuint Ssbo::GetBufferBindingPoint(tenshi::Shader& shader)
 	{
 		return glGetProgramResourceIndex(shader.GetProgram(), GL_SHADER_STORAGE_BLOCK,
 			m_Name.c_str());
@@ -22,7 +22,8 @@ namespace tenshi
 
 	void Ssbo::BindToShader(tenshi::Shader& shader, u8 index)
 	{
-		glShaderStorageBlockBinding(shader.GetProgram(), GetBufferBindingPoint(shader), index);
+		GLuint _bindingPoint = GetBufferBindingPoint(shader);
+		glShaderStorageBlockBinding(shader.GetProgram(), _bindingPoint, index);
 		glBindBufferBase(GL_SHADER_STORAGE_BUFFER, index, m_Buffer);
 	}
 
