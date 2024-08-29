@@ -2,7 +2,7 @@
 
 #include <map>
 #include <stack>
-#include <type_traits>
+#include <concepts>
 #include <iostream>
 #include <memory>
 
@@ -13,6 +13,9 @@
 
 namespace tenshi
 {
+	template <typename Derived>
+	concept IsBaseOfEntity = std::is_base_of<Entity, Derived>::value;
+
 	class EntityManager
 	{
 	public:
@@ -21,7 +24,7 @@ namespace tenshi
 	public:
 		// [typename] T: Derived Class of Entity
 		// [typename] Args: Parameter Pack with all Arguments equals to the Constructor Args of T
-		template <typename T, typename... Args> T& CreateEntity(Args... args)
+		template <IsBaseOfEntity T, typename... Args> T& CreateEntity(Args... args)
 		{
 			u32 _id = GetFreeId();
 
@@ -33,7 +36,7 @@ namespace tenshi
 			return *entity;
 		}
 
-		template <typename T> T* GetEntity(u32 id)
+		template <IsBaseOfEntity T> T* GetEntity(u32 id)
 		{
 			dynamic_cast<T*>(m_Entities[id]);
 		}
