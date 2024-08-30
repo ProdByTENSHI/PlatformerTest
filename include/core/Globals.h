@@ -13,6 +13,7 @@
 // -- Window
 inline tenshi::i32 g_WindowWidth = 1280;
 inline tenshi::i32 g_WindowHeight = 720;
+inline const char* g_WindowTitle = "Platformer";
 inline GLFWwindow* g_Window = nullptr;
 
 // -- Systems

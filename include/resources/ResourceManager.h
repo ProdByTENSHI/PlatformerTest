@@ -12,6 +12,7 @@ namespace tenshi
 {
 	inline const std::string SHADER_LOCATION = "res/shader";
 	inline const std::string TEXTURE_LOCATION = "res/sprites";
+	inline const std::string SPRITE_SHEET_LOCATION = "res/sprites";
 
 	class ResourceManager
 	{

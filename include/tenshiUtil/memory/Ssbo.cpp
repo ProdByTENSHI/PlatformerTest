@@ -1,17 +1,18 @@
-#include "memory/Ssbo.h"
+#include "Ssbo.h"
 
 namespace tenshi
 {
-	Ssbo::Ssbo(GLsizei size, const std::string& name)
-		: m_Name(name)
-	{
-		glCreateBuffers(1, &m_Buffer);
-		glNamedBufferStorage(m_Buffer, size, nullptr, GL_DYNAMIC_STORAGE_BIT);
-	}
-
 	Ssbo::~Ssbo()
 	{
 		glDeleteBuffers(1, &m_Buffer);
+	}
+
+	void Ssbo::Create(GLsizei size, const std::string& name)
+	{
+		m_Name = name;
+
+		glCreateBuffers(1, &m_Buffer);
+		glNamedBufferStorage(m_Buffer, size, nullptr, GL_DYNAMIC_STORAGE_BIT);
 	}
 
 	GLuint Ssbo::GetBufferBindingPoint(tenshi::Shader& shader)

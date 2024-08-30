@@ -20,6 +20,7 @@ namespace tenshi
 	{
 	public:
 		u32 GetEntityCount();
+		Entity* GetEntity(u32 id);
 
 	public:
 		// [typename] T: Derived Class of Entity
@@ -38,7 +39,7 @@ namespace tenshi
 
 		template <IsBaseOfEntity T> T* GetEntity(u32 id)
 		{
-			dynamic_cast<T*>(m_Entities[id]);
+			return dynamic_cast<T*>(m_Entities[id]);
 		}
 
 #pragma endregion

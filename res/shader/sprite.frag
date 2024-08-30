@@ -3,6 +3,7 @@
 uniform sampler2D u_Texture;
 
 in vec2 o_TextureCoords;
+in flat int o_EntityId;
 
 out vec4 o_FragColor;
 

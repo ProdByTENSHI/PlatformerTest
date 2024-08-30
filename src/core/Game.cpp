@@ -2,6 +2,7 @@
 
 #include <GL/glew.h>
 #include <iostream>
+#include <sstream>
 
 #include "core/Globals.h"
 #include "resources/SpriteSheet.h"
@@ -72,7 +73,7 @@ namespace tenshi
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-		g_Window = glfwCreateWindow(g_WindowWidth, g_WindowHeight, "Super Duper Platformer", nullptr, nullptr);
+		g_Window = glfwCreateWindow(g_WindowWidth, g_WindowHeight, g_WindowTitle, nullptr, nullptr);
 		glfwMakeContextCurrent(g_Window);
 		glfwSwapInterval(1);
 
@@ -114,8 +115,13 @@ namespace tenshi
 			SpriteEntity& entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
 				(g_ResourceManager->GetTexture("Wood.png"));
 			entity.m_Transform.Translate(glm::vec2(i, 0.0f));
-			g_MasterRenderer->AddSpriteEntity(entity);
+			g_MasterRenderer->AddEntity(entity.m_EntityId, entity.m_Sprite->m_Texture);
 		}
+
+		//SpriteSheet* spriteSheet = new SpriteSheet(g_ResourceManager->GetTexture("Gem_Merchant.png"),
+		//	101, 37, 1, 12);
+		//SpriteSheetEntity& entity = g_EntityManager->CreateEntity<SpriteSheetEntity, SpriteSheet&>(*spriteSheet);
+		//entity.SetFrame(0, 3);
 
 		m_InitStatus = true;
 	}
@@ -136,6 +142,12 @@ namespace tenshi
 			_currentFrameTime = glfwGetTime();
 			g_DeltaTime = _currentFrameTime - _lastFrameTime;
 			_lastFrameTime = _currentFrameTime;
+
+#ifdef _DEBUG
+			std::stringstream _ss;
+			_ss << g_WindowTitle << " Delta Time: " << g_DeltaTime;
+			glfwSetWindowTitle(g_Window, _ss.str().c_str());
+#endif
 
 			glfwPollEvents();
 			glClearColor(0.2f, 0.2f, 0.5f, 1.0f);

@@ -296,7 +296,7 @@
     <ClInclude Include="include\entity\EntityManager.h" />
     <ClInclude Include="include\entity\SpriteEntity.h" />
     <ClInclude Include="include\entity\SpriteSheetEntity.h" />
-    <ClInclude Include="include\memory\Ssbo.h" />
+    <ClInclude Include="include\tenshiUtil\memory\Ssbo.h" />
     <ClInclude Include="include\render\Camera.h" />
     <ClInclude Include="include\render\MasterRenderer.h" />
     <ClInclude Include="include\render\SpriteBatch.h" />
@@ -309,6 +309,7 @@
     <ClInclude Include="include\tenshiUtil\eventsystem\EventSystem.h" />
     <ClInclude Include="include\tenshiUtil\math\Rect2D.h" />
     <ClInclude Include="include\tenshiUtil\math\Transform2D.h" />
+    <ClInclude Include="include\tenshiUtil\memory\UniformBuffer.h" />
     <ClInclude Include="include\tenshiUtil\Types.h" />
     <ClInclude Include="include\util\Types.h" />
     <ClInclude Include="vendor\glew\include\GL\eglew.h" />
@@ -673,10 +674,11 @@
     <ClInclude Include="vendor\stb\stb_voxel_render.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\tenshiUtil\memory\UniformBuffer.cpp" />
     <ClCompile Include="src\core\Game.cpp" />
     <ClCompile Include="src\entity\EntityManager.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\memory\Ssbo.cpp" />
+    <ClCompile Include="include\tenshiUtil\memory\Ssbo.cpp" />
     <ClCompile Include="src\render\Camera.cpp" />
     <ClCompile Include="src\render\MasterRenderer.cpp" />
     <ClCompile Include="src\resources\ResourceManager.cpp" />

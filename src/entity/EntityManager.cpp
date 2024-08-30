@@ -9,6 +9,11 @@ namespace tenshi
 #pragma region Create Entity Method Overloads
 
 #pragma endregion
+	Entity* EntityManager::GetEntity(u32 id)
+	{
+		return m_Entities[id];
+	}
+
 	u32 EntityManager::GetEntityCount()
 	{
 		return m_Entities.size();

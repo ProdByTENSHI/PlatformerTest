@@ -9,25 +9,26 @@ namespace tenshi
 {
 	inline const u32 MAX_SPRITES_PER_BATCH = 1000;
 
-	// Batch of a Sprite
-	// All Sprites that have the same Texture will be rendered in the same Batch)
+	// All Entities that have the same Texture(Batched or not) are in one Batch
 	struct SpriteBatch
 	{
-		explicit SpriteBatch(u32 id) : m_Id(id) {}
+		SpriteBatch(std::shared_ptr<Texture> texture) : m_Texture(texture) {}
 
-		std::vector<const SpriteEntity*> m_Entities;
+		std::shared_ptr<Texture> m_Texture = nullptr;
+
+		// Holds all Entities that are in this Batch by their IDs
+		// Used to update their Transforms, etc before Drawing
+		std::vector<u32> m_EntityIds;
 
 		GLuint m_Vao = 0;
 		GLuint m_Vbo = 0;
 
-		const u32 m_Id = 0;
-
-		bool IsTextureInBatch(const SpriteEntity& entity)
+		bool IsTextureInBatch(std::shared_ptr<Texture> texture)
 		{
-			if (m_Entities.size() <= 0)
+			if (!m_Texture)
 				return false;
 
-			return entity.m_Sprite->m_Texture->m_Id == m_Entities[0]->m_Sprite->m_Texture->m_Id;
+			return texture->m_Id == m_Texture->m_Id;
 		}
 	};
 }

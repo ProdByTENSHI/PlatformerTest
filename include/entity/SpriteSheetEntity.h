@@ -7,7 +7,7 @@ namespace tenshi
 {
 	struct SpriteSheetEntity : virtual public Entity
 	{
-		SpriteSheetEntity(u32 id, SpriteSheet* spriteSheet);
+		SpriteSheetEntity(u32 id, SpriteSheet& spriteSheet);
 
 		void SetFrame(u8 hIndex, u8 vIndex);
 

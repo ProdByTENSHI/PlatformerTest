@@ -11,17 +11,12 @@ namespace tenshi
 
 	}
 
-	void SpriteSheet::GetTextureCoordsOfFrame(i32 hIndex, i32 vIndex, std::vector<Vertex>& vertices)
+	void SpriteSheet::SetTextureCoordsOfFrame(i32 hIndex, i32 vIndex, f32& u, f32& v)
 	{
-		if (vertices.size() <= 0)
-		{
-			std::cout << "[SPRITE SHEET]: Cannot set Texture Coords for empty Vertice Vector" << std::endl;
-			return;
-		}
+		u /= m_HFrames;
+		v /= m_VFrames;
 
-		for (auto& vertex : vertices)
-		{
-			std::cout << "Texture Coords: " << vertex.m_TexCoords[0] << " " << vertex.m_TexCoords[1] << std::endl;
-		}
+		u += hIndex;
+		v += vIndex;
 	}
 }

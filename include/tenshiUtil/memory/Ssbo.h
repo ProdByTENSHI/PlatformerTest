@@ -10,8 +10,9 @@ namespace tenshi
 	class Ssbo
 	{
 	public:
-		Ssbo(GLsizei size, const std::string& name);
 		~Ssbo();
+
+		void Create(GLsizei size, const std::string& name);
 
 		GLuint GetBufferBindingPoint(tenshi::Shader& shader);
 		void BindToShader(tenshi::Shader& shader, u8 index);
@@ -19,7 +20,7 @@ namespace tenshi
 
 	private:
 		GLuint m_Buffer = 0;
-		const std::string m_Name;
+		std::string m_Name;
 
 	};
 }
