@@ -110,18 +110,26 @@ namespace tenshi
 		g_Camera = std::make_unique<Camera>();
 
 		const i32 _ENTITIES = 10;
-		for (i32 i = 0; i < _ENTITIES; i++)
-		{
-			SpriteEntity& entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
-				(g_ResourceManager->GetTexture("Wood.png"));
-			entity.m_Transform.Translate(glm::vec2(i, 0.0f));
-			g_MasterRenderer->AddEntity(entity.m_EntityId, entity.m_Sprite->m_Texture);
-		}
+		//for (i32 i = 0; i < _ENTITIES; i++)
+		//{
+		//	SpriteEntity& entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
+		//		(g_ResourceManager->GetTexture("Wood.png"));
+		//	entity.m_Transform.Translate(glm::vec2(i, 2.0f));
+		//	g_MasterRenderer->AddStaticEntity(entity.m_EntityId, entity.m_Sprite->m_Texture);
+		//}
 
-		//SpriteSheet* spriteSheet = new SpriteSheet(g_ResourceManager->GetTexture("Gem_Merchant.png"),
-		//	101, 37, 1, 12);
-		//SpriteSheetEntity& entity = g_EntityManager->CreateEntity<SpriteSheetEntity, SpriteSheet&>(*spriteSheet);
-		//entity.SetFrame(0, 3);
+		SpriteSheet* spriteSheet = new SpriteSheet(g_ResourceManager->GetTexture("Gem_Merchant.png"),
+			101, 37);
+		SpriteSheet* spriteSheet2 = new SpriteSheet(g_ResourceManager->GetTexture("Spitter.png"),
+			57, 39);
+
+		for (i32 i = 0; i < 12; i++)
+		{
+			SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity>(*spriteSheet);
+			_entity.SetFrame(i);
+			_entity.m_Transform.Translate(glm::vec2(i * 2, 0.0f));
+			g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *spriteSheet);
+		}
 
 		m_InitStatus = true;
 	}

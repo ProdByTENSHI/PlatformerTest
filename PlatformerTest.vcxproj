@@ -296,6 +296,7 @@
     <ClInclude Include="include\entity\EntityManager.h" />
     <ClInclude Include="include\entity\SpriteEntity.h" />
     <ClInclude Include="include\entity\SpriteSheetEntity.h" />
+    <ClInclude Include="include\render\SpriteSheetBatch.h" />
     <ClInclude Include="include\tenshiUtil\memory\Ssbo.h" />
     <ClInclude Include="include\render\Camera.h" />
     <ClInclude Include="include\render\MasterRenderer.h" />

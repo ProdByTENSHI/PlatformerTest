@@ -1,5 +1,7 @@
 #include "entity/SpriteSheetEntity.h"
 
+#include <iostream>
+
 namespace tenshi
 {
 	SpriteSheetEntity::SpriteSheetEntity(u32 id, SpriteSheet& spriteSheet)
@@ -8,9 +10,9 @@ namespace tenshi
 		m_SpriteSheet = &spriteSheet;
 	}
 
-	void SpriteSheetEntity::SetFrame(u8 hIndex, u8 vIndex)
+	void SpriteSheetEntity::SetFrame(u32 index)
 	{
-		m_CurrentHFrame = hIndex;
-		m_CurrentVFrame = vIndex;
+		m_CurrentFrame = index;
+		OnFrameChange.Dispatch();
 	}
 }

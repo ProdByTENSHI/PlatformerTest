@@ -18,7 +18,7 @@ out vec2 o_TextureCoords;
 uniform mat4 u_ViewOrtho;
 
 void main() {
-	o_TextureCoords = posTex.zw;
+	o_TextureCoords = vec2(posTex.z, posTex.w);
 	o_EntityId = ids[gl_BaseInstance + gl_InstanceID];
 
 	gl_Position = u_ViewOrtho * modelMatrices[o_EntityId] * vec4(posTex.xy, 0.0, 1.0);

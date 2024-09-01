@@ -9,4 +9,6 @@ out vec4 o_FragColor;
 
 void main() {
 	o_FragColor = texture(u_Texture, o_TextureCoords);
+//	float _color = o_EntityId / 12.0;
+//	o_FragColor = vec4(_color, _color, _color, 1.0);
 }

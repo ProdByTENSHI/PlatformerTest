@@ -4,19 +4,59 @@
 
 namespace tenshi
 {
-	SpriteSheet::SpriteSheet(std::shared_ptr<Texture> texture, u16 frameWidth, u16 frameHeight,
-		u16 hFrameCount, u16 vFrameCount)
-		: m_Texture(texture), m_HFrames(hFrameCount), m_VFrames(vFrameCount)
+	SpriteSheet::SpriteSheet(std::shared_ptr<Texture> texture, u16 frameWidth, u16 frameHeight)
+		: m_Texture(texture), H_FRAMES(m_Texture->GetWidth() / frameWidth), V_FRAMES(m_Texture->GetHeight() / frameHeight),
+		FRAME_WIDTH(frameWidth), FRAME_HEIGHT(frameHeight), FRAME_COUNT(H_FRAMES* V_FRAMES)
 	{
-
 	}
 
-	void SpriteSheet::SetTextureCoordsOfFrame(i32 hIndex, i32 vIndex, f32& u, f32& v)
+	void SpriteSheet::SetTextureCoordsOfFrame(u32 index, std::vector<Vertex>& vertices)
 	{
-		u /= m_HFrames;
-		v /= m_VFrames;
+		if (index >= FRAME_COUNT)
+		{
+			std::cout << "[SPRITESHEET] Index out of Bounds. Must be between 0 and " << FRAME_COUNT - 1 << std::endl;
+			return;
+		}
 
-		u += hIndex;
-		v += vIndex;
+		if (vertices.size() != 6)
+		{
+			std::cout << "[SPRITESHEET] Cannot set Texture Coords because vertices Vector needs to be 6 Elements" << std::endl;
+			return;
+		}
+
+		u32 _x = 0, _y = 0;
+		_x = (index % H_FRAMES) * (f32)FRAME_WIDTH;
+		_y = (f32)m_Texture->GetHeight() - ((index / H_FRAMES) + 1) * (f32)FRAME_HEIGHT;
+
+		std::cout << "[DESIRED UV FOR INDEX " << index << "]" << std::endl;
+		std::cout << "[DESIRED] Top Left " << _x / (f32)m_Texture->GetWidth() << " " << _y / (f32)m_Texture->GetHeight() << std::endl;
+		std::cout << "[DESIRED] Top Right: " << (_x + (f32)FRAME_WIDTH) / (f32)m_Texture->GetWidth() << " " << _y / (f32)m_Texture->GetHeight() << std::endl;
+		std::cout << "[DESIRED] Bottom Right: " << (_x + (f32)FRAME_WIDTH) / (f32)m_Texture->GetWidth() << " " << (_y + (f32)FRAME_HEIGHT) / (f32)m_Texture->GetHeight() << std::endl;
+		std::cout << "[DESIRED] Bottom Left: " << _x / (f32)m_Texture->GetWidth() << " " << (_y + (f32)FRAME_HEIGHT) / (f32)m_Texture->GetHeight() << std::endl;
+
+		// Top Left
+		vertices[2].m_TexCoords[0] = _x / (f32)m_Texture->GetWidth();
+		vertices[2].m_TexCoords[1] = _y / (f32)m_Texture->GetHeight();
+		vertices[5].m_TexCoords[0] = vertices[2].m_TexCoords[0];
+		vertices[5].m_TexCoords[1] = vertices[2].m_TexCoords[1];
+
+		// Top Right
+		vertices[0].m_TexCoords[0] = (_x + (f32)FRAME_WIDTH) / (f32)m_Texture->GetWidth();
+		vertices[0].m_TexCoords[1] = _y / (f32)m_Texture->GetHeight();
+
+		// Bottom Right
+		vertices[1].m_TexCoords[0] = (_x + (f32)FRAME_WIDTH) / (f32)m_Texture->GetWidth();
+		vertices[1].m_TexCoords[1] = (_y + (f32)FRAME_HEIGHT) / (f32)m_Texture->GetHeight();
+		vertices[3].m_TexCoords[0] = vertices[1].m_TexCoords[0];
+		vertices[3].m_TexCoords[1] = vertices[1].m_TexCoords[1];
+
+		// Bottom Left
+		vertices[4].m_TexCoords[0] = _x / (f32)m_Texture->GetWidth();
+		vertices[4].m_TexCoords[1] = (_y + (f32)FRAME_HEIGHT) / (f32)m_Texture->GetHeight();
+
+		for (i32 i = 0; i < 6; i++)
+		{
+			std::cout << "UV " << i << ": " << vertices[i].m_TexCoords[0] << " " << vertices[i].m_TexCoords[1] << std::endl;
+		}
 	}
 }

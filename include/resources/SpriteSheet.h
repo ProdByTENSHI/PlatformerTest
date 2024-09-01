@@ -15,22 +15,20 @@ namespace tenshi
 		// [in] texture: Shared Pointer to the Spritesheet Texture
 		// [in] frameWidth: Width in Pixels per Frame
 		// [in] frameHeight: Height in Pixels per Frame
-		// [in] hFrameCount: Number of Frames on the Horizontal(0 to m_HFrames - 1)
-		// [in] vFrameCount: Number of Frames on the Vertical(0 to m_VFrames - 1)
-		SpriteSheet(std::shared_ptr<Texture> texture, u16 frameWidth, u16 frameHeight,
-			u16 hFrameCount, u16 vFrameCount);
+		SpriteSheet(std::shared_ptr<Texture> texture, u16 frameWidth, u16 frameHeight);
 
 		// Sets the Texture Coords of the given Vertice Vector to apply to the Frame
-		// [in] hIndex: Index on the Horizontal into the Spritesheet
-		// [in] hIndex: Index on the Vertical into the Spritesheet
-		// [out] u: U Texture Coor
-		// [out] V: V Texture Coor
-		void SetTextureCoordsOfFrame(i32 hIndex, i32 vIndex, f32& u, f32& v);
+		// [in] index: Index into the Spritesheet (0 to FRAME_COUNT - 1)
+		// [out] vertices: Vector that holds the Vertices
+		void SetTextureCoordsOfFrame(u32 index, std::vector<Vertex>& vertices);
 
 		// Texture of the Spritesheet
 		std::shared_ptr<Texture> m_Texture = nullptr;
 
-		const i16 m_HFrames = 0;
-		const i16 m_VFrames = 0;
+		const u16 FRAME_WIDTH = 0;
+		const u16 FRAME_HEIGHT = 0;
+		const i16 H_FRAMES = 0;
+		const i16 V_FRAMES = 0;
+		const u32 FRAME_COUNT = 0;
 	};
 }

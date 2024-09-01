@@ -24,13 +24,23 @@ namespace tenshi
 	{
 		std::vector<Vertex> _vertices;
 
-		_vertices.push_back(Vertex(0.0f, 1.0f, 0.0f, 1.0f));
-		_vertices.push_back(Vertex(1.0f, 0.0f, 1.0f, 0.0f));
-		_vertices.push_back(Vertex(0.0f, 0.0f, 0.0f, 0.0f));
+		// Top Right
+		_vertices.push_back(Vertex(1.0f, 1.0f, 1.0f, 1.0f));      // 0
 
-		_vertices.push_back(Vertex(0.0f, 1.0f, 0.0f, 1.0f));
-		_vertices.push_back(Vertex(1.0f, 1.0f, 1.0f, 1.0f));
-		_vertices.push_back(Vertex(1.0f, 0.0f, 1.0f, 0.0f));
+		// Bottom Right
+		_vertices.push_back(Vertex(1.0f, -1.0f, 1.0f, 0.0f));     // 1
+
+		// Top Left
+		_vertices.push_back(Vertex(-1.0f, 1.0f, 0.0f, 1.0f));      // 2
+
+		// Bottom Right
+		_vertices.push_back(Vertex(1.0f, -1.0f, 1.0f, 0.0f));     // 3
+
+		// Bottom Left
+		_vertices.push_back(Vertex(-1.0f, -1.0f, 0.0f, 0.0f));    // 4
+
+		// Top Left
+		_vertices.push_back(Vertex(-1.0f, 1.0f, 0.0f, 1.0f));      // 5
 
 		return _vertices;
 	}
