@@ -19,6 +19,7 @@ namespace tenshi
 		u32 m_CurrentFrame = 0;
 		const u32 TOTAL_FRAMES = 0;
 
-		Event<> OnFrameChange;
+		// Previous Frame, New Frame
+		Event<u32, u32> OnFrameChange;
 	};
 }

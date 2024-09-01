@@ -28,12 +28,6 @@ namespace tenshi
 		_x = (index % H_FRAMES) * (f32)FRAME_WIDTH;
 		_y = (f32)m_Texture->GetHeight() - ((index / H_FRAMES) + 1) * (f32)FRAME_HEIGHT;
 
-		std::cout << "[DESIRED UV FOR INDEX " << index << "]" << std::endl;
-		std::cout << "[DESIRED] Top Left " << _x / (f32)m_Texture->GetWidth() << " " << _y / (f32)m_Texture->GetHeight() << std::endl;
-		std::cout << "[DESIRED] Top Right: " << (_x + (f32)FRAME_WIDTH) / (f32)m_Texture->GetWidth() << " " << _y / (f32)m_Texture->GetHeight() << std::endl;
-		std::cout << "[DESIRED] Bottom Right: " << (_x + (f32)FRAME_WIDTH) / (f32)m_Texture->GetWidth() << " " << (_y + (f32)FRAME_HEIGHT) / (f32)m_Texture->GetHeight() << std::endl;
-		std::cout << "[DESIRED] Bottom Left: " << _x / (f32)m_Texture->GetWidth() << " " << (_y + (f32)FRAME_HEIGHT) / (f32)m_Texture->GetHeight() << std::endl;
-
 		// Top Left
 		vertices[2].m_TexCoords[0] = _x / (f32)m_Texture->GetWidth();
 		vertices[2].m_TexCoords[1] = _y / (f32)m_Texture->GetHeight();
@@ -53,10 +47,5 @@ namespace tenshi
 		// Bottom Left
 		vertices[4].m_TexCoords[0] = _x / (f32)m_Texture->GetWidth();
 		vertices[4].m_TexCoords[1] = (_y + (f32)FRAME_HEIGHT) / (f32)m_Texture->GetHeight();
-
-		for (i32 i = 0; i < 6; i++)
-		{
-			std::cout << "UV " << i << ": " << vertices[i].m_TexCoords[0] << " " << vertices[i].m_TexCoords[1] << std::endl;
-		}
 	}
 }

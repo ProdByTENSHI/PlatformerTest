@@ -120,16 +120,13 @@ namespace tenshi
 
 		SpriteSheet* spriteSheet = new SpriteSheet(g_ResourceManager->GetTexture("Gem_Merchant.png"),
 			101, 37);
-		SpriteSheet* spriteSheet2 = new SpriteSheet(g_ResourceManager->GetTexture("Spitter.png"),
-			57, 39);
+		SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity>(*spriteSheet);
+		g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *spriteSheet);
 
-		for (i32 i = 0; i < 12; i++)
-		{
-			SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity>(*spriteSheet);
-			_entity.SetFrame(i);
-			_entity.m_Transform.Translate(glm::vec2(i * 2, 0.0f));
-			g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *spriteSheet);
-		}
+		SpriteSheet* spriteSheet2 = new SpriteSheet(g_ResourceManager->GetTexture("Spitter.png"), 57, 39);
+		SpriteSheetEntity& _entity2 = g_EntityManager->CreateEntity<SpriteSheetEntity>(*spriteSheet2);
+		_entity2.m_Transform.Translate(glm::vec2(3.5f, 0.0f));
+		g_MasterRenderer->AddDynamicEntity(_entity2.m_EntityId, *spriteSheet2);
 
 		m_InitStatus = true;
 	}

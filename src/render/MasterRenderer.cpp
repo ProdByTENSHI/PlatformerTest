@@ -102,6 +102,13 @@ namespace tenshi
 
 			_batch->m_FrameToEntityId[_entity.m_CurrentFrame].push_back(entityId);
 
+			// -- Subscribe to OnFrameChange Event
+			EventHandler<u32, u32> _onFrameChange([&_entity, _batch](u32 previous, u32 index)
+				{
+					_batch->MoveEntity(_entity, previous, index);
+				});
+			_entity.OnFrameChange.Subscribe(_onFrameChange);
+
 			return i;
 		}
 
@@ -153,11 +160,18 @@ namespace tenshi
 		m_TransformsSsbo.SubBufferData(entityId * sizeof(glm::mat4), sizeof(glm::mat4),
 			glm::value_ptr(_entity.m_Transform.m_ModelMatrix));
 
+		// -- Subscribe to OnFrameChange Event
+		EventHandler<u32, u32> _onFrameChange([&_entity, batch](u32 previous, u32 index)
+			{
+				batch->MoveEntity(_entity, previous, index);
+			});
+		_entity.OnFrameChange.Subscribe(_onFrameChange);
+
+		m_DynamicSpriteBatches.push_back(batch);
+
 		// -- Add to Frame to EntityId
 		batch->m_FrameToEntityId.insert(std::make_pair(_entity.m_CurrentFrame, std::vector<u32>()));
 		batch->m_FrameToEntityId[_entity.m_CurrentFrame].push_back(entityId);
-
-		m_DynamicSpriteBatches.push_back(batch);
 
 		return m_DynamicSpriteBatches.size() - 1;
 	}
@@ -193,6 +207,7 @@ namespace tenshi
 			glBindVertexArray(batch->m_Vao);
 			batch->m_Texture->Bind();
 
+			// Instance all Frames of this Spritesheet that have at least 1 Entity at this Stage
 			// Send Entity IDs for this Draw Calls to the GPU
 			for (i32 i = 0; i < batch->m_FrameToEntityId.size(); i++)
 			{

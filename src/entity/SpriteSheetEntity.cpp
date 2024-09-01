@@ -12,7 +12,8 @@ namespace tenshi
 
 	void SpriteSheetEntity::SetFrame(u32 index)
 	{
+		u32 _prev = m_CurrentFrame;
 		m_CurrentFrame = index;
-		OnFrameChange.Dispatch();
+		OnFrameChange.Dispatch(_prev, index);
 	}
 }
