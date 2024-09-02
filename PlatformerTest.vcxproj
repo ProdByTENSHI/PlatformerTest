@@ -104,8 +104,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)game/include;$(SolutionDir)include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)game/include;$(SolutionDir)engine/include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -123,8 +123,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)game/include;$(SolutionDir)include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(SolutionDir)game/include;$(SolutionDir)engine/include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -290,32 +290,32 @@
     <None Include="vendor\glm\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\core\Game.h" />
-    <ClInclude Include="include\core\Globals.h" />
-    <ClInclude Include="include\entity\Entity.h" />
-    <ClInclude Include="include\entity\EntityManager.h" />
-    <ClInclude Include="include\entity\SpriteEntity.h" />
-    <ClInclude Include="include\entity\SpriteSheetEntity.h" />
-    <ClInclude Include="include\input\InputData.h" />
-    <ClInclude Include="include\input\InputHandler.h" />
-    <ClInclude Include="include\input\InputManager.h" />
-    <ClInclude Include="include\input\InputProvider.h" />
-    <ClInclude Include="include\render\SpriteSheetBatch.h" />
-    <ClInclude Include="include\tenshiUtil\memory\Ssbo.h" />
-    <ClInclude Include="include\render\Camera.h" />
-    <ClInclude Include="include\render\MasterRenderer.h" />
-    <ClInclude Include="include\render\SpriteBatch.h" />
-    <ClInclude Include="include\resources\ResourceManager.h" />
-    <ClInclude Include="include\resources\Shader.h" />
-    <ClInclude Include="include\resources\Sprite.h" />
-    <ClInclude Include="include\resources\SpriteSheet.h" />
-    <ClInclude Include="include\resources\Texture.h" />
-    <ClInclude Include="include\resources\Vertex.h" />
-    <ClInclude Include="include\tenshiUtil\eventsystem\EventSystem.h" />
-    <ClInclude Include="include\tenshiUtil\math\Rect2D.h" />
-    <ClInclude Include="include\tenshiUtil\math\Transform2D.h" />
-    <ClInclude Include="include\tenshiUtil\memory\UniformBuffer.h" />
-    <ClInclude Include="include\tenshiUtil\Types.h" />
+    <ClInclude Include="engine\include\core\Game.h" />
+    <ClInclude Include="engine\include\core\Globals.h" />
+    <ClInclude Include="engine\include\entity\Entity.h" />
+    <ClInclude Include="engine\include\entity\EntityManager.h" />
+    <ClInclude Include="engine\include\entity\SpriteEntity.h" />
+    <ClInclude Include="engine\include\entity\SpriteSheetEntity.h" />
+    <ClInclude Include="engine\include\input\InputData.h" />
+    <ClInclude Include="engine\include\input\InputHandler.h" />
+    <ClInclude Include="engine\include\input\InputManager.h" />
+    <ClInclude Include="engine\include\input\InputProvider.h" />
+    <ClInclude Include="engine\include\render\SpriteSheetBatch.h" />
+    <ClInclude Include="engine\include\tenshiUtil\memory\Ssbo.h" />
+    <ClInclude Include="engine\include\render\Camera.h" />
+    <ClInclude Include="engine\include\render\MasterRenderer.h" />
+    <ClInclude Include="engine\include\render\SpriteBatch.h" />
+    <ClInclude Include="engine\include\resources\ResourceManager.h" />
+    <ClInclude Include="engine\include\resources\Shader.h" />
+    <ClInclude Include="engine\include\resources\Sprite.h" />
+    <ClInclude Include="engine\include\resources\SpriteSheet.h" />
+    <ClInclude Include="engine\include\resources\Texture.h" />
+    <ClInclude Include="engine\include\resources\Vertex.h" />
+    <ClInclude Include="engine\include\tenshiUtil\eventsystem\EventSystem.h" />
+    <ClInclude Include="engine\include\tenshiUtil\math\Rect2D.h" />
+    <ClInclude Include="engine\include\tenshiUtil\math\Transform2D.h" />
+    <ClInclude Include="engine\include\tenshiUtil\memory\UniformBuffer.h" />
+    <ClInclude Include="engine\include\tenshiUtil\Types.h" />
     <ClInclude Include="include\util\Types.h" />
     <ClInclude Include="vendor\glew\include\GL\eglew.h" />
     <ClInclude Include="vendor\glew\include\GL\glew.h" />
@@ -679,21 +679,21 @@
     <ClInclude Include="vendor\stb\stb_voxel_render.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="include\tenshiUtil\memory\UniformBuffer.cpp" />
-    <ClCompile Include="src\core\Game.cpp" />
-    <ClCompile Include="src\entity\Entity.cpp" />
-    <ClCompile Include="src\entity\EntityManager.cpp" />
-    <ClCompile Include="src\input\InputManager.cpp" />
-    <ClCompile Include="src\input\InputProvider.cpp" />
-    <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="include\tenshiUtil\memory\Ssbo.cpp" />
-    <ClCompile Include="src\render\Camera.cpp" />
-    <ClCompile Include="src\render\MasterRenderer.cpp" />
-    <ClCompile Include="src\resources\ResourceManager.cpp" />
-    <ClCompile Include="src\resources\Shader.cpp" />
-    <ClCompile Include="src\resources\SpriteSheet.cpp" />
-    <ClCompile Include="src\resources\Texture.cpp" />
-    <ClCompile Include="src\entity\SpriteSheetEntity.cpp" />
+    <ClCompile Include="engine\include\tenshiUtil\memory\UniformBuffer.cpp" />
+    <ClCompile Include="engine\src\core\Game.cpp" />
+    <ClCompile Include="engine\src\entity\Entity.cpp" />
+    <ClCompile Include="engine\src\entity\EntityManager.cpp" />
+    <ClCompile Include="engine\src\input\InputManager.cpp" />
+    <ClCompile Include="engine\src\input\InputProvider.cpp" />
+    <ClCompile Include="engine\src\Main.cpp" />
+    <ClCompile Include="engine\include\tenshiUtil\memory\Ssbo.cpp" />
+    <ClCompile Include="engine\src\render\Camera.cpp" />
+    <ClCompile Include="engine\src\render\MasterRenderer.cpp" />
+    <ClCompile Include="engine\src\resources\ResourceManager.cpp" />
+    <ClCompile Include="engine\src\resources\Shader.cpp" />
+    <ClCompile Include="engine\src\resources\SpriteSheet.cpp" />
+    <ClCompile Include="engine\src\resources\Texture.cpp" />
+    <ClCompile Include="engine\src\entity\SpriteSheetEntity.cpp" />
     <ClCompile Include="vendor\glm\glm\detail\glm.cpp" />
     <ClCompile Include="vendor\stb\stb_vorbis.c" />
   </ItemGroup>
