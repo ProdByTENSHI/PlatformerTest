@@ -109,6 +109,7 @@ namespace tenshi
 		g_ResourceManager = std::make_unique<ResourceManager>();
 		g_MasterRenderer = std::make_unique<MasterRenderer>();
 		g_EntityManager = std::make_unique<EntityManager>();
+		g_InputManager = std::make_unique<InputManager>();
 		g_Camera = std::make_unique<Camera>();
 
 		const i32 _ENTITIES = 10;
@@ -178,6 +179,7 @@ namespace tenshi
 
 			_counter += g_DeltaTime;
 
+			g_InputManager->Update();
 			g_MasterRenderer->Render();
 
 			glfwSwapBuffers(g_Window);

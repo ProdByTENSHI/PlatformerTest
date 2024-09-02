@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)game/include;$(SolutionDir)include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -123,7 +123,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)game/include;$(SolutionDir)include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -296,6 +296,10 @@
     <ClInclude Include="include\entity\EntityManager.h" />
     <ClInclude Include="include\entity\SpriteEntity.h" />
     <ClInclude Include="include\entity\SpriteSheetEntity.h" />
+    <ClInclude Include="include\input\InputData.h" />
+    <ClInclude Include="include\input\InputHandler.h" />
+    <ClInclude Include="include\input\InputManager.h" />
+    <ClInclude Include="include\input\InputProvider.h" />
     <ClInclude Include="include\render\SpriteSheetBatch.h" />
     <ClInclude Include="include\tenshiUtil\memory\Ssbo.h" />
     <ClInclude Include="include\render\Camera.h" />
@@ -679,6 +683,8 @@
     <ClCompile Include="src\core\Game.cpp" />
     <ClCompile Include="src\entity\Entity.cpp" />
     <ClCompile Include="src\entity\EntityManager.cpp" />
+    <ClCompile Include="src\input\InputManager.cpp" />
+    <ClCompile Include="src\input\InputProvider.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="include\tenshiUtil\memory\Ssbo.cpp" />
     <ClCompile Include="src\render\Camera.cpp" />
