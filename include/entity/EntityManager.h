@@ -4,6 +4,7 @@
 #include <stack>
 #include <concepts>
 #include <iostream>
+#include <fstream>
 #include <memory>
 
 #include "entity/Entity.h"
@@ -19,8 +20,16 @@ namespace tenshi
 	class EntityManager
 	{
 	public:
+		EntityManager();
+
 		u32 GetEntityCount();
 		Entity* GetEntity(u32 id);
+
+		// Serializes all Entities and writes them into the DATA_PATH File
+		void Save();
+
+		// Deserializes all Entities in the DATA_PATH File and spawns in the Entity if it doesnt exist yet
+		void Load();
 
 	public:
 		// [typename] T: Derived Class of Entity
@@ -55,6 +64,9 @@ namespace tenshi
 
 		// Doesnt shrink when deleting an Entity
 		u32 m_TotalEntityCount = 0;
+
+		// Path to the Entity Data File
+		const std::string DATA_PATH = "entities.json";
 
 	private:
 		u32 GetFreeId();

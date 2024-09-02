@@ -677,6 +677,7 @@
   <ItemGroup>
     <ClCompile Include="include\tenshiUtil\memory\UniformBuffer.cpp" />
     <ClCompile Include="src\core\Game.cpp" />
+    <ClCompile Include="src\entity\Entity.cpp" />
     <ClCompile Include="src\entity\EntityManager.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="include\tenshiUtil\memory\Ssbo.cpp" />

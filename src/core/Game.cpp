@@ -9,6 +9,8 @@
 
 namespace tenshi
 {
+	u32 _spriteSheetEntity = 0;
+
 	void glewMessageCallback(GLenum source, GLenum type, GLuint id, GLenum severity,
 		GLsizei length, GLchar const* message, void const* user_param)
 	{
@@ -110,23 +112,20 @@ namespace tenshi
 		g_Camera = std::make_unique<Camera>();
 
 		const i32 _ENTITIES = 10;
-		//for (i32 i = 0; i < _ENTITIES; i++)
-		//{
-		//	SpriteEntity& entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
-		//		(g_ResourceManager->GetTexture("Wood.png"));
-		//	entity.m_Transform.Translate(glm::vec2(i, 2.0f));
-		//	g_MasterRenderer->AddStaticEntity(entity.m_EntityId, entity.m_Sprite->m_Texture);
-		//}
+		for (i32 i = 0; i < _ENTITIES; i++)
+		{
+			SpriteEntity& entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
+				(g_ResourceManager->GetTexture("Wood.png"));
+			entity.m_Transform.Translate(glm::vec2(i, 2.0f));
+			g_MasterRenderer->AddStaticEntity(entity.m_EntityId, entity.m_Sprite->m_Texture);
+		}
 
 		SpriteSheet* spriteSheet = new SpriteSheet(g_ResourceManager->GetTexture("Gem_Merchant.png"),
 			101, 37);
 		SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity>(*spriteSheet);
 		g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *spriteSheet);
 
-		SpriteSheet* spriteSheet2 = new SpriteSheet(g_ResourceManager->GetTexture("Spitter.png"), 57, 39);
-		SpriteSheetEntity& _entity2 = g_EntityManager->CreateEntity<SpriteSheetEntity>(*spriteSheet2);
-		_entity2.m_Transform.Translate(glm::vec2(3.5f, 0.0f));
-		g_MasterRenderer->AddDynamicEntity(_entity2.m_EntityId, *spriteSheet2);
+		_spriteSheetEntity = _entity.m_EntityId;
 
 		m_InitStatus = true;
 	}
@@ -141,6 +140,10 @@ namespace tenshi
 	{
 		f32 _lastFrameTime = 0.0f;
 		f32 _currentFrameTime = 0.0f;
+		f32 _fps = 0.05f;
+		f32 _counter = 0.0f;
+
+		SpriteSheetEntity& _entity = *g_EntityManager->GetEntity<SpriteSheetEntity>(_spriteSheetEntity);
 
 		while (!glfwWindowShouldClose(g_Window) && m_InitStatus)
 		{
@@ -152,11 +155,28 @@ namespace tenshi
 			std::stringstream _ss;
 			_ss << g_WindowTitle << " Delta Time: " << g_DeltaTime;
 			glfwSetWindowTitle(g_Window, _ss.str().c_str());
+
+			if (glfwGetKey(g_Window, GLFW_KEY_F3) == GLFW_PRESS)
+			{
+				g_EntityManager->Save();
+			}
 #endif
 
 			glfwPollEvents();
 			glClearColor(0.2f, 0.2f, 0.5f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			if (_counter >= _fps)
+			{
+				if (_entity.m_CurrentFrame >= _entity.m_SpriteSheet->FRAME_COUNT - 1)
+					_entity.SetFrame(0);
+				else
+					_entity.SetFrame(_entity.m_CurrentFrame + 1);
+
+				_counter = 0;
+			}
+
+			_counter += g_DeltaTime;
 
 			g_MasterRenderer->Render();
 

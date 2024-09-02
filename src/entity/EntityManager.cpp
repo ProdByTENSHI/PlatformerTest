@@ -6,6 +6,27 @@
 
 namespace tenshi
 {
+	EntityManager::EntityManager()
+	{
+	}
+
+	void EntityManager::Save()
+	{
+		std::fstream _stream(DATA_PATH, std::ios::out | std::ios::app);
+
+		for (auto& entity : m_Entities)
+		{
+			json _data = entity.second->Serialize();
+			_stream << _data;
+		}
+
+		_stream.close();
+	}
+
+	void EntityManager::Load()
+	{
+	}
+
 #pragma region Create Entity Method Overloads
 
 #pragma endregion
