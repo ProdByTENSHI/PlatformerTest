@@ -11,6 +11,10 @@ namespace tenshi
 	{
 		SpriteSheetEntity(u32 id, SpriteSheet& spriteSheet);
 
+		EntityType::EntityType GetType() override;
+		json Serialize() override;
+		void Deserialize(const json& data) override;
+
 		void SetFrame(u32 index);
 
 		SpriteSheet* m_SpriteSheet = nullptr;

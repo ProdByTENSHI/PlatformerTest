@@ -121,6 +121,7 @@ namespace tenshi
 				SpriteEntity& _entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
 					(g_ResourceManager->GetTexture("Wood.png"));
 				_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount(), 0.0f));
+				_entity.m_Transform.Scale(0.25f);
 				g_MasterRenderer->AddStaticEntity(_entity.m_EntityId, _entity.m_Sprite->m_Texture);
 			});
 		g_InputManager->OnKeyDown.Subscribe(_onEntitySpawn);

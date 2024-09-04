@@ -685,6 +685,7 @@
     <ClCompile Include="engine\src\core\Game.cpp" />
     <ClCompile Include="engine\src\entity\Entity.cpp" />
     <ClCompile Include="engine\src\entity\EntityManager.cpp" />
+    <ClCompile Include="engine\src\entity\SpriteEntity.cpp" />
     <ClCompile Include="engine\src\input\InputManager.cpp" />
     <ClCompile Include="engine\src\input\InputMiddleware.cpp" />
     <ClCompile Include="engine\src\input\InputProvider.cpp" />

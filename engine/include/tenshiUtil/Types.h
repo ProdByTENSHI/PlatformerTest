@@ -2,6 +2,8 @@
 
 namespace tenshi
 {
+#define BIT(X) 1 << X
+
 	typedef char byte;
 	typedef unsigned char uByte;
 

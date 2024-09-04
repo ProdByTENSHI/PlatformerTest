@@ -9,16 +9,12 @@ namespace tenshi
 {
 	struct SpriteEntity : virtual public Entity
 	{
-		SpriteEntity(u32 id, std::shared_ptr<Texture> texture)
-			: Entity(id)
-		{
-			m_Sprite = new Sprite(texture);
-		}
+		SpriteEntity(u32 id, std::shared_ptr<Texture> texture);
+		~SpriteEntity();
 
-		~SpriteEntity()
-		{
-			delete m_Sprite;
-		}
+		EntityType::EntityType GetType() override;
+		json Serialize() override;
+		void Deserialize(const json& data) override;
 
 		Sprite* m_Sprite = nullptr;
 	};

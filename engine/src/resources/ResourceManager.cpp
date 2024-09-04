@@ -35,6 +35,8 @@ namespace tenshi
 			return nullptr;
 		}
 
+		_texture->m_Name = name;
+
 		m_TextureCache.insert(std::make_pair(name, _texture));
 
 		std::cout << "[RESOURCEMANAGER] Loaded Texture " << name << std::endl;

@@ -42,9 +42,9 @@ namespace tenshi
 			u32 _id = GetFreeId();
 
 			T* entity = new T(_id, args...);
-			m_Entities.insert(std::make_pair(_id, entity));
+			m_Entities[_id] = entity;
 
-			++m_TotalEntityCount;
+			std::cout << "[ENTITY MANAGER] Spawned in Entity with ID " << _id << std::endl;
 
 			return *entity;
 		}
@@ -65,9 +65,6 @@ namespace tenshi
 		// Those freed Entity IDs get stored on the next entity ids Stack
 		// When creating an Entity the ID is taken of the Top of the Stack
 		std::stack<u32> m_NextEntityIds;
-
-		// Doesnt shrink when deleting an Entity
-		u32 m_TotalEntityCount = 0;
 
 		// Path to the Entity Data File
 		const std::string DATA_PATH = "entities.json";

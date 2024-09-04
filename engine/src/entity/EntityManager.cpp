@@ -1,6 +1,7 @@
 #include "entity/EntityManager.h"
 
 #include <string>
+#include <sstream>
 
 #include "core/Globals.h"
 
@@ -13,24 +14,31 @@ namespace tenshi
 	void EntityManager::Save()
 	{
 		std::fstream _stream(DATA_PATH, std::ios::out);
-		_stream << "[";
 
+		json _finalData;
 		for (auto& entity : m_Entities)
 		{
 			json _data = entity.second->Serialize();
-			_stream << _data;
-			_stream << ",";
+			_data["type"] = entity.second->GetType();
+			_finalData.push_back(_data);
 		}
 
-		_stream << "]";
-
+		_stream << _finalData;
 		_stream.close();
 
 		// Clear Entities
 		i32 _entityCount = m_Entities.size();
 		for (i32 i = 0; i < _entityCount; i++)
 		{
+			if (!m_Entities[i])
+				continue;
+
 			DestroyEntity(m_Entities[i]->m_EntityId);
+		}
+
+		for (i32 i = 0; i < m_NextEntityIds.size(); i++)
+		{
+			m_NextEntityIds.pop();
 		}
 	}
 
@@ -45,11 +53,24 @@ namespace tenshi
 			return;
 		}
 
-		json _data;
-		_stream >> _data;
-		std::cout << "Loaded Data: " << _data << std::endl;
-
+		json _data = json::parse(_stream);
 		_stream.close();
+
+		for (auto& entity : _data.items())
+		{
+			EntityType::EntityType _type = entity.value()["type"];
+			switch (_type)
+			{
+			case EntityType::SpriteEntity:
+				json _path = entity.value()["texturePath"];
+				std::string _texturePath = _path.dump();
+				SpriteEntity& _entity = g_EntityManager->CreateEntity<SpriteEntity>
+					(g_ResourceManager->GetTexture(_texturePath.substr(1, _texturePath.length() - 2)));
+				_entity.Deserialize(entity.value());
+				g_MasterRenderer->AddStaticEntity(_entity.m_EntityId, _entity.m_Sprite->m_Texture);
+				break;
+			}
+		}
 	}
 
 	Entity* EntityManager::GetEntity(u32 id)
@@ -65,10 +86,13 @@ namespace tenshi
 	u32 EntityManager::GetFreeId()
 	{
 		u32 _id = 0;
-		if (m_NextEntityIds.size() > 1)
+		if (m_NextEntityIds.size() >= 1)
+		{
 			_id = m_NextEntityIds.top();
+			m_NextEntityIds.pop();
+		}
 		else
-			_id = m_TotalEntityCount;
+			_id = m_Entities.size();
 
 		return _id;
 	}
@@ -80,6 +104,8 @@ namespace tenshi
 
 		delete m_Entities[entityId];
 		m_Entities.erase(entityId);
+
+		m_NextEntityIds.push(entityId);
 
 		OnEntityDestroyed.Dispatch(entityId);
 	}

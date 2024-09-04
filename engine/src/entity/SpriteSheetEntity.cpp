@@ -16,4 +16,20 @@ namespace tenshi
 		m_CurrentFrame = index;
 		OnFrameChange.Dispatch(_prev, index);
 	}
+
+	EntityType::EntityType SpriteSheetEntity::GetType()
+	{
+		return EntityType::SpriteSheetEntity;
+	}
+
+	json SpriteSheetEntity::Serialize()
+	{
+		json _data = Entity::Serialize();
+		return _data;
+	}
+
+	void SpriteSheetEntity::Deserialize(const json& data)
+	{
+
+	}
 }

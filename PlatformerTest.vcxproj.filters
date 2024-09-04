@@ -1672,5 +1672,8 @@
     <ClCompile Include="game\src\player\PlayerInputMiddleware.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="engine\src\entity\SpriteEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
