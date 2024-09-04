@@ -31,6 +31,9 @@ namespace tenshi
 		// Deserializes all Entities in the DATA_PATH File and spawns in the Entity if it doesnt exist yet
 		void Load();
 
+		// Destroy the given Entity and invokes the OnEntityDestroy Event
+		void DestroyEntity(u32 entityId);
+
 	public:
 		// [typename] T: Derived Class of Entity
 		// [typename] Args: Parameter Pack with all Arguments equals to the Constructor Args of T
@@ -51,7 +54,8 @@ namespace tenshi
 			return dynamic_cast<T*>(m_Entities[id]);
 		}
 
-#pragma endregion
+	public:
+		Event<u32> OnEntityDestroyed;
 
 	private:
 		std::map<u32, Entity*> m_Entities;

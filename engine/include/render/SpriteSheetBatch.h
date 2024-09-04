@@ -28,6 +28,7 @@ namespace tenshi
 			auto& _vec = m_FrameToEntityId[previousFrame];
 
 			bool _wasDeleted = false;
+			// Todo: Rewrite this to use STLUtil Functionality
 			for (i32 i = 0; i < _vec.size(); i++)
 			{
 				if (_vec[i] != entity.m_EntityId)
@@ -42,12 +43,42 @@ namespace tenshi
 				m_FrameToEntityId[newFrame].push_back(entity.m_EntityId);
 		}
 
+		void RemoveEntity(u32 entityId)
+		{
+			for (i32 i = 0; i < m_FrameToEntityId.size(); i++)
+			{
+				std::vector<u32>& entities = m_FrameToEntityId[i];
+				for (auto& entity : entities)
+				{
+					if (entity != entityId)
+						continue;
+
+					std::vector<u32>::iterator _it = STLUtil::GetItOfElementInVec<u32>(entities, entity);
+					entities.erase(_it);
+				}
+			}
+		}
+
 		bool IsTextureInBatch(std::shared_ptr<Texture> texture)
 		{
 			if (!m_Texture)
 				return false;
 
 			return texture->m_Id == m_Texture->m_Id;
+		}
+
+		bool IsEntityInBatch(u32 entityId)
+		{
+			for (auto& frame : m_FrameToEntityId)
+			{
+				for (auto& entity : frame.second)
+				{
+					if (entity == entityId)
+						return true;
+				}
+			}
+
+			return false;
 		}
 	};
 };

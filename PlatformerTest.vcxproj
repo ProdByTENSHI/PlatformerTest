@@ -301,6 +301,7 @@
     <ClInclude Include="engine\include\input\InputManager.h" />
     <ClInclude Include="engine\include\input\InputProvider.h" />
     <ClInclude Include="engine\include\render\SpriteSheetBatch.h" />
+    <ClInclude Include="engine\include\tenshiUtil\container\STLUtil.h" />
     <ClInclude Include="engine\include\tenshiUtil\memory\Ssbo.h" />
     <ClInclude Include="engine\include\render\Camera.h" />
     <ClInclude Include="engine\include\render\MasterRenderer.h" />

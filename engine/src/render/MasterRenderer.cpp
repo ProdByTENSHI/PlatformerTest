@@ -15,6 +15,29 @@ namespace tenshi
 
 		m_EntityIdsUbo.Create(sizeof(i32) * MAX_SPRITES_PER_BATCH, "EntityIds");
 		m_EntityIdsUbo.BindToShader(*m_SpriteShader.get(), ENTITY_IDS_UBO_BIINDING_POINT);
+
+		EventHandler<u32> _onEntityDestroyed([this](u32 entityId)
+			{
+				for (auto& batch : m_StaticSpriteBatches)
+				{
+					if (!batch->IsEntityInBatch(entityId))
+						continue;
+
+					batch->RemoveEntity(entityId);
+					return;
+				}
+
+				for (auto& batch : m_DynamicSpriteBatches)
+				{
+					if (!batch->IsEntityInBatch(entityId))
+						continue;
+
+					batch->RemoveEntity(entityId);
+					return;
+				}
+			});
+		g_EntityManager->OnEntityDestroyed.Subscribe(_onEntityDestroyed);
+
 	}
 
 	i32 MasterRenderer::AddStaticEntity(u32 entityId, std::shared_ptr<Texture> texture)

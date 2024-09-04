@@ -107,35 +107,32 @@ namespace tenshi
 
 		// -- Init Global Systemss
 		g_ResourceManager = std::make_unique<ResourceManager>();
-		g_MasterRenderer = std::make_unique<MasterRenderer>();
 		g_EntityManager = std::make_unique<EntityManager>();
+		g_MasterRenderer = std::make_unique<MasterRenderer>();
 		g_InputManager = std::make_unique<InputManager>();
 		g_Camera = std::make_unique<Camera>();
 
 		// -- Testing
-		const i32 _ENTITIES = 10;
-		for (i32 i = 0; i < _ENTITIES; i++)
-		{
-			SpriteEntity& entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
-				(g_ResourceManager->GetTexture("Wood.png"));
-			entity.m_Transform.Translate(glm::vec2(i, 2.0f));
-			g_MasterRenderer->AddStaticEntity(entity.m_EntityId, entity.m_Sprite->m_Texture);
-		}
-
-		SpriteSheet* spriteSheet = new SpriteSheet(g_ResourceManager->GetTexture("Gem_Merchant.png"),
-			101, 37);
-		SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity>(*spriteSheet);
-		g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *spriteSheet);
-
-		_spriteSheetEntity = _entity.m_EntityId;
-		EventHandler<i32> _onSave([](i32 key)
+		EventHandler<i32> _onEntitySpawn([](i32 key)
 			{
-				if (key != GLFW_KEY_F3)
+				if (key != GLFW_KEY_G)
 					return;
 
-				g_EntityManager->Save();
+				SpriteEntity& _entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
+					(g_ResourceManager->GetTexture("Wood.png"));
+				_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount(), 0.0f));
+				g_MasterRenderer->AddStaticEntity(_entity.m_EntityId, _entity.m_Sprite->m_Texture);
 			});
-		g_InputManager->OnKeyDown.Subscribe(_onSave);
+		g_InputManager->OnKeyDown.Subscribe(_onEntitySpawn);
+
+		EventHandler<i32> _onSerialize([](i32 key)
+			{
+				if (key == GLFW_KEY_F3)
+					g_EntityManager->Save();
+				else if (key == GLFW_KEY_F4)
+					g_EntityManager->Load();
+			});
+		g_InputManager->OnKeyDown.Subscribe(_onSerialize);
 
 		m_InitStatus = true;
 	}
@@ -150,10 +147,6 @@ namespace tenshi
 	{
 		f32 _lastFrameTime = 0.0f;
 		f32 _currentFrameTime = 0.0f;
-		f32 _fps = 0.05f;
-		f32 _counter = 0.0f;
-
-		SpriteSheetEntity& _entity = *g_EntityManager->GetEntity<SpriteSheetEntity>(_spriteSheetEntity);
 
 		while (!glfwWindowShouldClose(g_Window) && m_InitStatus)
 		{
@@ -172,19 +165,6 @@ namespace tenshi
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			g_InputManager->Update();
-
-			if (_counter >= _fps)
-			{
-				if (_entity.m_CurrentFrame >= _entity.m_SpriteSheet->FRAME_COUNT - 1)
-					_entity.SetFrame(0);
-				else
-					_entity.SetFrame(_entity.m_CurrentFrame + 1);
-
-				_counter = 0;
-			}
-
-			_counter += g_DeltaTime;
-
 			g_MasterRenderer->Render();
 
 			glfwSwapBuffers(g_Window);

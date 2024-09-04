@@ -10,9 +10,11 @@ namespace tenshi
 	json Entity::Serialize()
 	{
 		json _data;
-		_data[m_EntityId]["id"] = m_EntityId;
-		_data[m_EntityId]["transform"]["position"] = { {"x", m_Transform.m_Position.x}, {"y",m_Transform.m_Position.y} };
-		_data[m_EntityId]["transform"]["scale"] = { {"x", m_Transform.m_Scale.x}, {"y", m_Transform.m_Scale.y} };
+		_data["id"] = m_EntityId;
+		_data["name"] = m_EntityName;
+		_data["position"] = { {m_Transform.m_Position.x, m_Transform.m_Position.y} };
+		_data["rotation"] = { {m_Transform.m_Rotation.x, m_Transform.m_Rotation.y} };
+		_data["scale"] = { {m_Transform.m_Scale.x, m_Transform.m_Scale.y} };
 
 		std::cout << _data << std::endl;
 
