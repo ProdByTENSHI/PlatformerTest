@@ -42,7 +42,7 @@ namespace tenshi
 			u32 _id = GetFreeId();
 
 			T* entity = new T(_id, args...);
-			m_Entities[_id] = entity;
+			m_Entities.insert_or_assign(_id, entity);
 
 			std::cout << "[ENTITY MANAGER] Spawned in Entity with ID " << _id << std::endl;
 
