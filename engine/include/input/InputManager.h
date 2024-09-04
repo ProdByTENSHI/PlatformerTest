@@ -17,11 +17,7 @@ namespace tenshi
 	public:
 		InputManager();
 
-		void AddInputProvider(const std::string& name, InputProvider* provider);
 		void Update();
-
-		// Do this only once and store the Pointer to the Input Provider as it is a costly operation
-		InputProvider* GetInputProvider(const std::string& name);
 
 	public:
 		// [param] u32: GLFW KeyCode
@@ -41,8 +37,6 @@ namespace tenshi
 	private:
 		// Time since Press till the Key is marked as "Holding"
 		const f32 KEY_HOLD_DELAY = 0.5f;
-
-		std::map<std::string, InputProvider*> m_InputProvider;
 
 	};
 }

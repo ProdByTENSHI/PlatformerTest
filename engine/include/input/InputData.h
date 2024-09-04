@@ -7,12 +7,12 @@
 
 namespace tenshi
 {
-	// Holds all relevant Input Data for the Player
+	// Base Class for all Input Data
 	struct InputData
 	{
 		glm::vec2 m_MovementDirection;
+		f32 m_MovementSpeed = 0.0f;
 
-		bool m_IsCrouching;
 		bool m_CanJump = false;
 	};
 }

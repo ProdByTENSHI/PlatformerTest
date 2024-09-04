@@ -297,7 +297,7 @@
     <ClInclude Include="engine\include\entity\SpriteEntity.h" />
     <ClInclude Include="engine\include\entity\SpriteSheetEntity.h" />
     <ClInclude Include="engine\include\input\InputData.h" />
-    <ClInclude Include="engine\include\input\InputHandler.h" />
+    <ClInclude Include="engine\include\input\InputMiddleware.h" />
     <ClInclude Include="engine\include\input\InputManager.h" />
     <ClInclude Include="engine\include\input\InputProvider.h" />
     <ClInclude Include="engine\include\render\SpriteSheetBatch.h" />
@@ -316,6 +316,7 @@
     <ClInclude Include="engine\include\tenshiUtil\math\Transform2D.h" />
     <ClInclude Include="engine\include\tenshiUtil\memory\UniformBuffer.h" />
     <ClInclude Include="engine\include\tenshiUtil\Types.h" />
+    <ClInclude Include="game\include\player\PlayerInputMiddleware.h" />
     <ClInclude Include="include\util\Types.h" />
     <ClInclude Include="vendor\glew\include\GL\eglew.h" />
     <ClInclude Include="vendor\glew\include\GL\glew.h" />
@@ -684,6 +685,7 @@
     <ClCompile Include="engine\src\entity\Entity.cpp" />
     <ClCompile Include="engine\src\entity\EntityManager.cpp" />
     <ClCompile Include="engine\src\input\InputManager.cpp" />
+    <ClCompile Include="engine\src\input\InputMiddleware.cpp" />
     <ClCompile Include="engine\src\input\InputProvider.cpp" />
     <ClCompile Include="engine\src\Main.cpp" />
     <ClCompile Include="engine\include\tenshiUtil\memory\Ssbo.cpp" />
@@ -694,6 +696,7 @@
     <ClCompile Include="engine\src\resources\SpriteSheet.cpp" />
     <ClCompile Include="engine\src\resources\Texture.cpp" />
     <ClCompile Include="engine\src\entity\SpriteSheetEntity.cpp" />
+    <ClCompile Include="game\src\player\PlayerInputMiddleware.cpp" />
     <ClCompile Include="vendor\glm\glm\detail\glm.cpp" />
     <ClCompile Include="vendor\stb\stb_vorbis.c" />
   </ItemGroup>

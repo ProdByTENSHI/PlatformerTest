@@ -4,7 +4,8 @@
 #include <vector>
 
 #include "input/InputData.h"
-#include "input/InputHandler.h"
+#include "input/InputMiddleware.h"
+#include "tenshiUtil/eventsystem/EventSystem.h"
 
 namespace tenshi
 {
@@ -12,14 +13,16 @@ namespace tenshi
 	class InputProvider
 	{
 	public:
+		InputProvider();
+
 		// Processes the Input through all Handlers and returns the final Input
-		InputData& GetInput();
+		InputData GetInput();
 
 		// Adds an InputHandler into the Process Chain
 		// [in] handler: Reference to the InputHandler
-		void AddHandler(InputHandler& handler);
+		void AddMiddleware(InputMiddleware& handler);
 
 	private:
-		std::vector<InputHandler*> m_Handler;
+		std::vector<InputMiddleware*> m_Handler;
 	};
 }

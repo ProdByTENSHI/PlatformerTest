@@ -2,7 +2,11 @@
 
 namespace tenshi
 {
-	InputData& InputProvider::GetInput()
+	InputProvider::InputProvider()
+	{
+	}
+
+	InputData InputProvider::GetInput()
 	{
 		InputData _data;
 
@@ -14,7 +18,7 @@ namespace tenshi
 		return _data;
 	}
 
-	void InputProvider::AddHandler(InputHandler& handler)
+	void InputProvider::AddMiddleware(InputMiddleware& handler)
 	{
 		m_Handler.push_back(&handler);
 	}

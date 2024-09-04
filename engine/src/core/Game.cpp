@@ -112,6 +112,7 @@ namespace tenshi
 		g_InputManager = std::make_unique<InputManager>();
 		g_Camera = std::make_unique<Camera>();
 
+		// -- Testing
 		const i32 _ENTITIES = 10;
 		for (i32 i = 0; i < _ENTITIES; i++)
 		{
@@ -127,6 +128,14 @@ namespace tenshi
 		g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *spriteSheet);
 
 		_spriteSheetEntity = _entity.m_EntityId;
+		EventHandler<i32> _onSave([](i32 key)
+			{
+				if (key != GLFW_KEY_F3)
+					return;
+
+				g_EntityManager->Save();
+			});
+		g_InputManager->OnKeyDown.Subscribe(_onSave);
 
 		m_InitStatus = true;
 	}
@@ -156,16 +165,13 @@ namespace tenshi
 			std::stringstream _ss;
 			_ss << g_WindowTitle << " Delta Time: " << g_DeltaTime;
 			glfwSetWindowTitle(g_Window, _ss.str().c_str());
-
-			if (glfwGetKey(g_Window, GLFW_KEY_F3) == GLFW_PRESS)
-			{
-				g_EntityManager->Save();
-			}
 #endif
 
 			glfwPollEvents();
 			glClearColor(0.2f, 0.2f, 0.5f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT);
+
+			g_InputManager->Update();
 
 			if (_counter >= _fps)
 			{
@@ -179,7 +185,6 @@ namespace tenshi
 
 			_counter += g_DeltaTime;
 
-			g_InputManager->Update();
 			g_MasterRenderer->Render();
 
 			glfwSwapBuffers(g_Window);
