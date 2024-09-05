@@ -10,10 +10,7 @@ namespace tenshi
 		stbi_set_flip_vertically_on_load(0);
 		stbi_uc* _buffer = stbi_load(name.c_str(), &m_Width, &m_Height, &m_Channels, 4);
 		if (!_buffer)
-		{
-			std::cerr << "Could not load Texture " << name << std::endl;
 			return;
-		}
 
 		glCreateTextures(GL_TEXTURE_2D, 1, &m_Texture);
 
@@ -24,6 +21,8 @@ namespace tenshi
 
 		glTextureStorage2D(m_Texture, 1, GL_RGBA8, m_Width, m_Height);
 		glTextureSubImage2D(m_Texture, 0, 0, 0, m_Width, m_Height, GL_RGBA, GL_UNSIGNED_BYTE, _buffer);
+
+		m_CreationStatus = true;
 
 		++s_TextureCount;
 	}

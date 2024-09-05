@@ -9,7 +9,7 @@ namespace tenshi
 {
 	struct SpriteSheetEntity : virtual public Entity
 	{
-		SpriteSheetEntity(u32 id, SpriteSheet& spriteSheet);
+		SpriteSheetEntity(u32 id, std::shared_ptr<SpriteSheet> spriteSheet);
 
 		EntityType::EntityType GetType() override;
 		json Serialize() override;
@@ -17,7 +17,7 @@ namespace tenshi
 
 		void SetFrame(u32 index);
 
-		SpriteSheet* m_SpriteSheet = nullptr;
+		std::shared_ptr<SpriteSheet> m_SpriteSheet = nullptr;
 
 		// Between 0 and TOTAL_FRAMES - 1
 		u32 m_CurrentFrame = 0;

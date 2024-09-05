@@ -29,7 +29,7 @@ namespace tenshi
 
 		std::shared_ptr<Texture> _texture = std::make_shared<Texture>
 			(std::string(TEXTURE_LOCATION).append("/").append(name));
-		if (_texture == nullptr)
+		if (_texture == nullptr || !_texture->GetCreationStatus())
 		{
 			std::cerr << "Could not load Texture " << name << std::endl;
 			return nullptr;
@@ -54,5 +54,24 @@ namespace tenshi
 
 		std::cerr << "No Texture with the ID " << id << " found!" << std::endl;
 		return nullptr;
+	}
+
+	std::shared_ptr<SpriteSheet> ResourceManager::GetSpriteSheet(const std::string& name, u16 frameWidth, u16 frameHeight)
+	{
+		if (m_SpriteSheetCache.find(name) != m_SpriteSheetCache.end())
+			return m_SpriteSheetCache[name];
+
+		std::shared_ptr<SpriteSheet> spriteSheet = std::make_shared<SpriteSheet>(GetTexture(name), frameWidth, frameHeight);
+		if (spriteSheet->m_Texture == nullptr || !spriteSheet->m_Texture->GetCreationStatus())
+		{
+			std::cerr << "[RESOURCEMANAGER] Could not load Spritesheet " << name << std::endl;
+			return nullptr;
+		}
+
+		m_SpriteSheetCache.insert(std::make_pair(name, spriteSheet));
+
+		std::cout << "[RESOURCEMANAGER] Loaded Spritesheet " << name << std::endl;
+
+		return spriteSheet;
 	}
 }

@@ -62,13 +62,29 @@ namespace tenshi
 			switch (_type)
 			{
 			case EntityType::SpriteEntity:
+			{
 				json _path = entity.value()["texturePath"];
 				std::string _texturePath = _path.dump();
 				SpriteEntity& _entity = g_EntityManager->CreateEntity<SpriteEntity>
 					(g_ResourceManager->GetTexture(_texturePath.substr(1, _texturePath.length() - 2)));
 				_entity.Deserialize(entity.value());
 				g_MasterRenderer->AddStaticEntity(_entity.m_EntityId, _entity.m_Sprite->m_Texture);
-				break;
+			}
+			break;
+
+			case EntityType::SpriteSheetEntity:
+			{
+				json _path = entity.value()["texturePath"];
+				u16 _frameWidth = entity.value()["frameWidth"];
+				u16 _frameHeight = entity.value()["frameHeight"];
+				std::string _texturePath = _path.dump();
+				SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity>
+					(g_ResourceManager->GetSpriteSheet(_texturePath.substr(1, _texturePath.length() - 2),
+						_frameWidth, _frameHeight));
+				_entity.Deserialize(entity.value());
+				g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *_entity.m_SpriteSheet);
+			}
+			break;
 			}
 		}
 	}

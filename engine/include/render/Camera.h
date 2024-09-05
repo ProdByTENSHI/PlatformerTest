@@ -14,11 +14,11 @@ namespace tenshi
 
 		void Update(Shader& shader);
 
+		glm::vec3 m_Position = glm::vec3(0.0f);
 	private:
 		const f32 INIT_SPEED = 1.0f;
 		f32 m_Speed = INIT_SPEED;
 
-		glm::vec3 m_Position = glm::vec3(0.0f);
 		glm::mat4 m_Ortho = glm::mat4(1.0f);
 
 		const glm::vec3 CAM_UP = glm::vec3(0.0f, 1.0f, 0.0f);

@@ -115,16 +115,22 @@ namespace tenshi
 		// -- Testing
 		EventHandler<i32> _onEntitySpawn([](i32 key)
 			{
-				if (key != GLFW_KEY_G)
-					return;
-
-				SpriteEntity& _entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
-					(g_ResourceManager->GetTexture("Wood.png"));
-				_entity.m_Transform.Scale(0.25f);
-				_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount(), 0.0f));
-				g_MasterRenderer->AddStaticEntity(_entity.m_EntityId, _entity.m_Sprite->m_Texture);
-
-				std::cout << _entity.m_Transform.m_Position.x << " " << _entity.m_Transform.m_Position.y << std::endl;
+				if (key == GLFW_KEY_G)
+				{
+					SpriteEntity& _entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
+						(g_ResourceManager->GetTexture("Wood.png"));
+					_entity.m_Transform.Scale(0.25f);
+					_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount(), 0.0f));
+					g_MasterRenderer->AddStaticEntity(_entity.m_EntityId, _entity.m_Sprite->m_Texture);
+				}
+				else if (key == GLFW_KEY_H)
+				{
+					SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity, std::shared_ptr<SpriteSheet>>
+						(g_ResourceManager->GetSpriteSheet("Gem_Merchant.png", 101, 37));
+					_entity.m_Transform.Scale(0.5f);
+					_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount(), 2.0f));
+					g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *_entity.m_SpriteSheet);
+				}
 			});
 		g_InputManager->OnKeyDown.Subscribe(_onEntitySpawn);
 
@@ -159,7 +165,8 @@ namespace tenshi
 
 #ifdef _DEBUG
 			std::stringstream _ss;
-			_ss << g_WindowTitle << " Delta Time: " << g_DeltaTime;
+			_ss << g_WindowTitle << " Delta Time: " << g_DeltaTime << " | Camera Position "
+				<< g_Camera->m_Position.x << " " << g_Camera->m_Position.y;
 			glfwSetWindowTitle(g_Window, _ss.str().c_str());
 #endif
 

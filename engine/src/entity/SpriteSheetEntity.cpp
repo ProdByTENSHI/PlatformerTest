@@ -4,10 +4,10 @@
 
 namespace tenshi
 {
-	SpriteSheetEntity::SpriteSheetEntity(u32 id, SpriteSheet& spriteSheet)
+	SpriteSheetEntity::SpriteSheetEntity(u32 id, std::shared_ptr<SpriteSheet> spriteSheet)
 		: Entity(id)
 	{
-		m_SpriteSheet = &spriteSheet;
+		m_SpriteSheet = spriteSheet;
 	}
 
 	void SpriteSheetEntity::SetFrame(u32 index)
@@ -25,11 +25,15 @@ namespace tenshi
 	json SpriteSheetEntity::Serialize()
 	{
 		json _data = Entity::Serialize();
+		_data["texturePath"] = m_SpriteSheet->m_Texture->GetName();
+		_data["frameWidth"] = m_SpriteSheet->FRAME_WIDTH;
+		_data["frameHeight"] = m_SpriteSheet->FRAME_HEIGHT;
+
 		return _data;
 	}
 
 	void SpriteSheetEntity::Deserialize(const json& data)
 	{
-
+		Entity::Deserialize(data);
 	}
 }

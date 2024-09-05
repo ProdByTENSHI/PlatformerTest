@@ -33,6 +33,11 @@ namespace tenshi
 			return m_Name;
 		}
 
+		bool GetCreationStatus() const
+		{
+			return m_CreationStatus;
+		}
+
 		std::string m_Name;
 
 	private:
@@ -42,5 +47,7 @@ namespace tenshi
 		i32 m_Width = 0;
 		i32 m_Height = 0;
 		i32 m_Channels = 0;
+
+		bool m_CreationStatus = false;
 	};
 }
