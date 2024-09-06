@@ -2,9 +2,9 @@
 
 #include <memory>
 #include <vector>
+#include <string>
 
 #include "resources/Texture.h"
-#include "tenshiUtil/math/Rect2D.h"
 #include "resources/Vertex.h"
 
 namespace tenshi
@@ -15,7 +15,7 @@ namespace tenshi
 		// [in] texture: Shared Pointer to the Spritesheet Texture
 		// [in] frameWidth: Width in Pixels per Frame
 		// [in] frameHeight: Height in Pixels per Frame
-		SpriteSheet(std::shared_ptr<Texture> texture, u16 frameWidth, u16 frameHeight);
+		SpriteSheet(std::shared_ptr<Texture> texture, const std::string& name, u16 frameWidth, u16 frameHeight);
 
 		// Sets the Texture Coords of the given Vertice Vector to apply to the Frame
 		// [in] index: Index into the Spritesheet (0 to FRAME_COUNT - 1)
@@ -30,5 +30,6 @@ namespace tenshi
 		const i16 H_FRAMES = 0;
 		const i16 V_FRAMES = 0;
 		const u32 FRAME_COUNT = 0;
+		const std::string NAME;
 	};
 }

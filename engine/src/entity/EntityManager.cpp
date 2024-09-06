@@ -74,13 +74,17 @@ namespace tenshi
 
 			case EntityType::SpriteSheetEntity:
 			{
-				json _path = entity.value()["texturePath"];
-				u16 _frameWidth = entity.value()["frameWidth"];
-				u16 _frameHeight = entity.value()["frameHeight"];
-				std::string _texturePath = _path.dump();
 				SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity>
-					(g_ResourceManager->GetSpriteSheet(_texturePath.substr(1, _texturePath.length() - 2),
-						_frameWidth, _frameHeight));
+					(g_ResourceManager->GetSpriteSheet(entity.value()["spriteSheet"]));
+				_entity.Deserialize(entity.value());
+				g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *_entity.m_SpriteSheet);
+			}
+			break;
+
+			case EntityType::AnimatedEntity:
+			{
+				AnimatedEntity& _entity = g_EntityManager->CreateEntity<AnimatedEntity>
+					(g_ResourceManager->GetSpriteSheet(entity.value()["spriteSheet"]), entity.value()["animationData"]);
 				_entity.Deserialize(entity.value());
 				g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *_entity.m_SpriteSheet);
 			}

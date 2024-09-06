@@ -3,6 +3,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <memory>
+#include <keccak.h>
+#include <md5.h>
 
 #include "tenshiUtil/Types.h"
 #include "tenshiUtil/eventsystem/EventSystem.h"
@@ -27,7 +29,12 @@ inline std::unique_ptr<tenshi::Camera> g_Camera = nullptr;
 
 // -- Events
 inline tenshi::Event<tenshi::i32, tenshi::i32> g_OnWindowResize;
+inline tenshi::Event<> g_OnUpdate;
 
 // -- Globals
 inline tenshi::f32 g_DeltaTime = 0.0f;
 inline tenshi::u32 g_MAX_SPRITES = 500.000;
+
+// -- Hashing
+inline Keccak g_Keccak = Keccak();
+inline MD5 g_MD5 = MD5();

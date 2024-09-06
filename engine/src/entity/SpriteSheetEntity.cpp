@@ -25,9 +25,7 @@ namespace tenshi
 	json SpriteSheetEntity::Serialize()
 	{
 		json _data = Entity::Serialize();
-		_data["texturePath"] = m_SpriteSheet->m_Texture->GetName();
-		_data["frameWidth"] = m_SpriteSheet->FRAME_WIDTH;
-		_data["frameHeight"] = m_SpriteSheet->FRAME_HEIGHT;
+		_data["spriteSheet"] = m_SpriteSheet->NAME;
 
 		return _data;
 	}

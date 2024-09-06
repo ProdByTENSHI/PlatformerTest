@@ -6,7 +6,6 @@
 #include "resources/Vertex.h"
 #include "resources/Texture.h"
 #include "tenshiUtil/math/Transform2D.h"
-#include "tenshiUtil/math/Rect2D.h"
 
 namespace tenshi
 {

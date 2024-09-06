@@ -4,9 +4,9 @@
 
 namespace tenshi
 {
-	SpriteSheet::SpriteSheet(std::shared_ptr<Texture> texture, u16 frameWidth, u16 frameHeight)
+	SpriteSheet::SpriteSheet(std::shared_ptr<Texture> texture, const std::string& name, u16 frameWidth, u16 frameHeight)
 		: m_Texture(texture), H_FRAMES(m_Texture->GetWidth() / frameWidth), V_FRAMES(m_Texture->GetHeight() / frameHeight),
-		FRAME_WIDTH(frameWidth), FRAME_HEIGHT(frameHeight), FRAME_COUNT(H_FRAMES* V_FRAMES)
+		FRAME_WIDTH(frameWidth), FRAME_HEIGHT(frameHeight), FRAME_COUNT(H_FRAMES* V_FRAMES), NAME(name)
 	{
 	}
 
@@ -26,7 +26,7 @@ namespace tenshi
 
 		u32 _x = 0, _y = 0;
 		_x = (index % H_FRAMES) * (f32)FRAME_WIDTH;
-		_y = (f32)m_Texture->GetHeight() - ((index / H_FRAMES) + 1) * (f32)FRAME_HEIGHT;
+		_y = (index / H_FRAMES) * (f32)FRAME_HEIGHT;
 
 		// Top Left
 		vertices[2].m_TexCoords[0] = _x / (f32)m_Texture->GetWidth();

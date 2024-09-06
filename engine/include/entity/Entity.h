@@ -18,7 +18,8 @@ namespace tenshi
 		{
 			Invalid = BIT(0),
 			SpriteEntity = BIT(1),
-			SpriteSheetEntity = BIT(2)
+			SpriteSheetEntity = BIT(2),
+			AnimatedEntity = BIT(3)
 		};
 	}
 

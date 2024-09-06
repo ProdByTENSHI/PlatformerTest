@@ -35,7 +35,6 @@ namespace tenshi
 					continue;
 
 				_vec.erase(std::next(_vec.begin(), i));
-
 				_wasDeleted = true;
 			}
 

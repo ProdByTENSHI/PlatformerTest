@@ -11,6 +11,7 @@
 #include "tenshiUtil/Types.h"
 #include "entity/SpriteEntity.h"
 #include "entity/SpriteSheetEntity.h"
+#include "entity/AnimatedEntity.h"
 
 namespace tenshi
 {

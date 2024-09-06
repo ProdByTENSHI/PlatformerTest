@@ -126,9 +126,19 @@ namespace tenshi
 				else if (key == GLFW_KEY_H)
 				{
 					SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity, std::shared_ptr<SpriteSheet>>
-						(g_ResourceManager->GetSpriteSheet("Gem_Merchant.png", 101, 37));
+						(g_ResourceManager->GetSpriteSheet("Gem_Merchant"));
 					_entity.m_Transform.Scale(0.5f);
 					_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount(), 2.0f));
+					g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *_entity.m_SpriteSheet);
+				}
+				else if (key == GLFW_KEY_J)
+				{
+					AnimatedEntity& _entity = g_EntityManager->CreateEntity<AnimatedEntity, std::shared_ptr<SpriteSheet>>
+						(g_ResourceManager->GetSpriteSheet("Player"), "player.json");
+					_entity.m_Transform.Scale(0.5f);
+					_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount() * -1.0f, -2.0f));
+					_entity.AddAnimation(g_ResourceManager->GetAnimation("player.json", "Walk"));
+
 					g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *_entity.m_SpriteSheet);
 				}
 			});
@@ -175,6 +185,8 @@ namespace tenshi
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			g_InputManager->Update();
+			g_OnUpdate.Dispatch();
+
 			g_MasterRenderer->Render();
 
 			glfwSwapBuffers(g_Window);

@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)game/include;$(SolutionDir)engine/include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor/hash;$(SolutionDir)game/include;$(SolutionDir)engine/include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -137,8 +137,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="res\anim\player.json" />
     <None Include="res\shader\sprite.frag" />
     <None Include="res\shader\sprite.vert" />
+    <None Include="res\sprites\spritesheets.json" />
     <None Include="vendor\glew\doc\advanced.html" />
     <None Include="vendor\glew\doc\basic.html" />
     <None Include="vendor\glew\doc\build.html" />
@@ -290,8 +292,10 @@
     <None Include="vendor\glm\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\include\anim\SpriteSheetAnimation.h" />
     <ClInclude Include="engine\include\core\Game.h" />
     <ClInclude Include="engine\include\core\Globals.h" />
+    <ClInclude Include="engine\include\entity\AnimatedEntity.h" />
     <ClInclude Include="engine\include\entity\Entity.h" />
     <ClInclude Include="engine\include\entity\EntityManager.h" />
     <ClInclude Include="engine\include\entity\SpriteEntity.h" />
@@ -302,6 +306,7 @@
     <ClInclude Include="engine\include\input\InputProvider.h" />
     <ClInclude Include="engine\include\render\SpriteSheetBatch.h" />
     <ClInclude Include="engine\include\tenshiUtil\container\STLUtil.h" />
+    <ClInclude Include="engine\include\tenshiUtil\math\Random.h" />
     <ClInclude Include="engine\include\tenshiUtil\memory\Ssbo.h" />
     <ClInclude Include="engine\include\render\Camera.h" />
     <ClInclude Include="engine\include\render\MasterRenderer.h" />
@@ -313,7 +318,6 @@
     <ClInclude Include="engine\include\resources\Texture.h" />
     <ClInclude Include="engine\include\resources\Vertex.h" />
     <ClInclude Include="engine\include\tenshiUtil\eventsystem\EventSystem.h" />
-    <ClInclude Include="engine\include\tenshiUtil\math\Rect2D.h" />
     <ClInclude Include="engine\include\tenshiUtil\math\Transform2D.h" />
     <ClInclude Include="engine\include\tenshiUtil\memory\UniformBuffer.h" />
     <ClInclude Include="engine\include\tenshiUtil\Types.h" />
@@ -612,6 +616,14 @@
     <ClInclude Include="vendor\glm\glm\vec3.hpp" />
     <ClInclude Include="vendor\glm\glm\vec4.hpp" />
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
+    <ClInclude Include="vendor\hash\crc32.h" />
+    <ClInclude Include="vendor\hash\hash.h" />
+    <ClInclude Include="vendor\hash\hmac.h" />
+    <ClInclude Include="vendor\hash\keccak.h" />
+    <ClInclude Include="vendor\hash\md5.h" />
+    <ClInclude Include="vendor\hash\sha1.h" />
+    <ClInclude Include="vendor\hash\sha256.h" />
+    <ClInclude Include="vendor\hash\sha3.h" />
     <ClInclude Include="vendor\json\include\nlohmann\adl_serializer.hpp" />
     <ClInclude Include="vendor\json\include\nlohmann\byte_container_with_subtype.hpp" />
     <ClInclude Include="vendor\json\include\nlohmann\detail\abi_macros.hpp" />
@@ -682,7 +694,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\include\tenshiUtil\memory\UniformBuffer.cpp" />
+    <ClCompile Include="engine\src\anim\SpriteSheetAnimation.cpp" />
     <ClCompile Include="engine\src\core\Game.cpp" />
+    <ClCompile Include="engine\src\entity\AnimatedEntity.cpp" />
     <ClCompile Include="engine\src\entity\Entity.cpp" />
     <ClCompile Include="engine\src\entity\EntityManager.cpp" />
     <ClCompile Include="engine\src\entity\SpriteEntity.cpp" />
@@ -700,6 +714,12 @@
     <ClCompile Include="engine\src\entity\SpriteSheetEntity.cpp" />
     <ClCompile Include="game\src\player\PlayerInputMiddleware.cpp" />
     <ClCompile Include="vendor\glm\glm\detail\glm.cpp" />
+    <ClCompile Include="vendor\hash\crc32.cpp" />
+    <ClCompile Include="vendor\hash\keccak.cpp" />
+    <ClCompile Include="vendor\hash\md5.cpp" />
+    <ClCompile Include="vendor\hash\sha1.cpp" />
+    <ClCompile Include="vendor\hash\sha256.cpp" />
+    <ClCompile Include="vendor\hash\sha3.cpp" />
     <ClCompile Include="vendor\stb\stb_vorbis.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
