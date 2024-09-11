@@ -78,6 +78,15 @@ namespace tenshi
 					if (_it == m_Entities.end())
 						return 0;
 
+					for (auto& batch : m_Batches)
+					{
+						if (!batch->IsEntityInBatch(entity))
+							continue;
+
+						batch->RemoveEntity(entity);
+						break;
+					}
+
 					m_Entities.erase(_it);
 				}
 			});

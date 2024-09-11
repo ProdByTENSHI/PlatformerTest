@@ -38,10 +38,11 @@ namespace tenshi
 				return;
 			}
 
-			if (!m_ComponentArrays[typeid(T).name])
-				m_ComponentArrays[typeid(T).name] = new ComponentArray<T>();
+			const char* _typeName = typeid(T).name();
+			if (m_ComponentArrays.find(_typeName) == m_ComponentArrays.end())
+				m_ComponentArrays.insert(std::make_pair(_typeName, new ComponentArray<T>()));
 
-			m_ComponentArrays[typeid(T).name()]->m_EntityToComponent
+			m_ComponentArrays[_typeName]->m_EntityToComponent
 				.insert(std::make_pair(entity, &component));
 			m_EntitySignatures[entity].set(_type);
 			m_OnEntitySignatureChange.Dispatch(entity, m_EntitySignatures[entity]);
