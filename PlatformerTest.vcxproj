@@ -305,10 +305,6 @@
     <ClInclude Include="engine\include\ecs\System.h" />
     <ClInclude Include="engine\include\ecs\systems\SpriteRenderer.h" />
     <ClInclude Include="engine\include\entity\AnimatedEntity.h" />
-    <ClInclude Include="engine\include\entity\Entity.h" />
-    <ClInclude Include="engine\include\entity\EntityManager.h" />
-    <ClInclude Include="engine\include\entity\SpriteEntity.h" />
-    <ClInclude Include="engine\include\entity\SpriteSheetEntity.h" />
     <ClInclude Include="engine\include\input\InputData.h" />
     <ClInclude Include="engine\include\input\InputMiddleware.h" />
     <ClInclude Include="engine\include\input\InputManager.h" />
@@ -316,7 +312,6 @@
     <ClInclude Include="engine\include\render\SpriteSheetBatch.h" />
     <ClInclude Include="engine\include\tenshiUtil\container\STLUtil.h" />
     <ClInclude Include="engine\include\tenshiUtil\math\Random.h" />
-    <ClInclude Include="engine\include\tenshiUtil\memory\Ssbo.h" />
     <ClInclude Include="engine\include\render\Camera.h" />
     <ClInclude Include="engine\include\render\MasterRenderer.h" />
     <ClInclude Include="engine\include\render\SpriteBatch.h" />
@@ -326,6 +321,7 @@
     <ClInclude Include="engine\include\resources\Texture.h" />
     <ClInclude Include="engine\include\resources\Vertex.h" />
     <ClInclude Include="engine\include\tenshiUtil\eventsystem\EventSystem.h" />
+    <ClInclude Include="engine\include\tenshiUtil\memory\Ssbo.h" />
     <ClInclude Include="engine\include\tenshiUtil\memory\UniformBuffer.h" />
     <ClInclude Include="engine\include\tenshiUtil\Types.h" />
     <ClInclude Include="game\include\player\PlayerInputMiddleware.h" />
@@ -708,10 +704,6 @@
     <ClCompile Include="engine\src\ecs\Ecs.cpp" />
     <ClCompile Include="engine\src\ecs\System.cpp" />
     <ClCompile Include="engine\src\ecs\systems\SpriteRenderer.cpp" />
-    <ClCompile Include="engine\src\entity\AnimatedEntity.cpp" />
-    <ClCompile Include="engine\src\entity\Entity.cpp" />
-    <ClCompile Include="engine\src\entity\EntityManager.cpp" />
-    <ClCompile Include="engine\src\entity\SpriteEntity.cpp" />
     <ClCompile Include="engine\src\input\InputManager.cpp" />
     <ClCompile Include="engine\src\input\InputMiddleware.cpp" />
     <ClCompile Include="engine\src\input\InputProvider.cpp" />
@@ -723,7 +715,6 @@
     <ClCompile Include="engine\src\resources\Shader.cpp" />
     <ClCompile Include="engine\src\resources\SpriteSheet.cpp" />
     <ClCompile Include="engine\src\resources\Texture.cpp" />
-    <ClCompile Include="engine\src\entity\SpriteSheetEntity.cpp" />
     <ClCompile Include="game\src\player\PlayerInputMiddleware.cpp" />
     <ClCompile Include="vendor\glm\glm\detail\glm.cpp" />
     <ClCompile Include="vendor\hash\crc32.cpp" />

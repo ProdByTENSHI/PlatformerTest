@@ -26,6 +26,7 @@ namespace tenshi
 
 		Entity CreateEntity();
 		void DestroyEntity(Entity entity);
+		void Init();
 
 	public:
 		template <IsBaseOfComponent T> void AddComponent(Entity entity, T& component)
@@ -36,6 +37,9 @@ namespace tenshi
 				std::cout << "[ECS] Cannot add Base Component to Entity " << entity << std::endl;
 				return;
 			}
+
+			if (!m_ComponentArrays[typeid(T).name])
+				m_ComponentArrays[typeid(T).name] = new ComponentArray<T>();
 
 			m_ComponentArrays[typeid(T).name()]->m_EntityToComponent
 				.insert(std::make_pair(entity, &component));

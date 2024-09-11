@@ -112,6 +112,7 @@ namespace tenshi
 		g_MasterRenderer = std::make_unique<MasterRenderer>();
 		g_InputManager = std::make_unique<InputManager>();
 		g_Ecs = std::make_unique<Ecs>();
+		g_Ecs->Init();
 		g_Camera = std::make_unique<Camera>();
 
 		m_InitStatus = true;

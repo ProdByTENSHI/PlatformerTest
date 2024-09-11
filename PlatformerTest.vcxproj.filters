@@ -1552,9 +1552,6 @@
     <ClInclude Include="engine\include\render\SpriteSheetBatch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\include\tenshiUtil\memory\Ssbo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\include\render\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1654,16 +1651,7 @@
     <ClInclude Include="engine\include\entity\AnimatedEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\include\entity\Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\EntityManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\SpriteEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\SpriteSheetEntity.h">
+    <ClInclude Include="engine\include\tenshiUtil\memory\Ssbo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -1750,21 +1738,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\src\ecs\System.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\AnimatedEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\EntityManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\SpriteEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\SpriteSheetEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

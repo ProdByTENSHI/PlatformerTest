@@ -6,7 +6,6 @@ namespace tenshi
 {
 	Ecs::Ecs()
 	{
-		InitSystems();
 	}
 
 	Ecs::~Ecs()
@@ -79,5 +78,10 @@ namespace tenshi
 		}
 
 		return _id;
+	}
+
+	void Ecs::Init()
+	{
+		InitSystems();
 	}
 }
