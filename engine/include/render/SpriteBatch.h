@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-#include "entity/SpriteEntity.h"
+#include "resources/Texture.h"
 #include "tenshiUtil/container/STLUtil.h"
 
 namespace tenshi

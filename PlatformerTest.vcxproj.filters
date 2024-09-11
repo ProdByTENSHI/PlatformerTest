@@ -1537,18 +1537,6 @@
     <ClInclude Include="engine\include\core\Globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\include\entity\Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\EntityManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\SpriteEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\SpriteSheetEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\include\input\InputData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1582,9 +1570,6 @@
     <ClInclude Include="engine\include\resources\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\include\resources\Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\include\resources\SpriteSheet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1597,9 +1582,6 @@
     <ClInclude Include="engine\include\tenshiUtil\eventsystem\EventSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\include\tenshiUtil\math\Transform2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\include\tenshiUtil\memory\UniformBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1610,9 +1592,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\include\tenshiUtil\container\STLUtil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\AnimatedEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\include\anim\SpriteSheetAnimation.h">
@@ -1645,6 +1624,48 @@
     <ClInclude Include="engine\include\tenshiUtil\math\Random.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\include\ecs\Ecs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\ComponentTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\ECS_Definitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\ComponentArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\components\TransformComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\components\SpriteComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\systems\SpriteRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\entity\AnimatedEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\entity\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\entity\EntityManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\entity\SpriteEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\entity\SpriteSheetEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vendor\glm\glm\detail\glm.cpp">
@@ -1657,12 +1678,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\src\core\Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\EntityManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\src\input\InputManager.cpp">
@@ -1698,16 +1713,7 @@
     <ClCompile Include="engine\src\resources\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="engine\src\entity\SpriteSheetEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="game\src\player\PlayerInputMiddleware.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\SpriteEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\AnimatedEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\src\anim\SpriteSheetAnimation.cpp">
@@ -1729,6 +1735,36 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vendor\hash\sha256.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\ecs\Ecs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\ecs\components\TransformComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\ecs\components\SpriteComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\ecs\systems\SpriteRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\ecs\System.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\entity\AnimatedEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\entity\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\entity\EntityManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\entity\SpriteEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\entity\SpriteSheetEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -6,6 +6,8 @@
 
 #include "core/Globals.h"
 #include "resources/SpriteSheet.h"
+#include "ecs/components/TransformComponent.h"
+#include "ecs/components/SpriteComponent.h"
 
 namespace tenshi
 {
@@ -107,53 +109,19 @@ namespace tenshi
 
 		// -- Init Global Systemss
 		g_ResourceManager = std::make_unique<ResourceManager>();
-		g_EntityManager = std::make_unique<EntityManager>();
 		g_MasterRenderer = std::make_unique<MasterRenderer>();
 		g_InputManager = std::make_unique<InputManager>();
+		g_Ecs = std::make_unique<Ecs>();
 		g_Camera = std::make_unique<Camera>();
 
-		// -- Testing
-		EventHandler<i32> _onEntitySpawn([](i32 key)
-			{
-				if (key == GLFW_KEY_G)
-				{
-					SpriteEntity& _entity = g_EntityManager->CreateEntity<SpriteEntity, std::shared_ptr<Texture>>
-						(g_ResourceManager->GetTexture("Wood.png"));
-					_entity.m_Transform.Scale(0.25f);
-					_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount(), 0.0f));
-					g_MasterRenderer->AddStaticEntity(_entity.m_EntityId, _entity.m_Sprite->m_Texture);
-				}
-				else if (key == GLFW_KEY_H)
-				{
-					SpriteSheetEntity& _entity = g_EntityManager->CreateEntity<SpriteSheetEntity, std::shared_ptr<SpriteSheet>>
-						(g_ResourceManager->GetSpriteSheet("Gem_Merchant"));
-					_entity.m_Transform.Scale(0.5f);
-					_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount(), 2.0f));
-					g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *_entity.m_SpriteSheet);
-				}
-				else if (key == GLFW_KEY_J)
-				{
-					AnimatedEntity& _entity = g_EntityManager->CreateEntity<AnimatedEntity, std::shared_ptr<SpriteSheet>>
-						(g_ResourceManager->GetSpriteSheet("Player"), "player.json");
-					_entity.m_Transform.Scale(0.5f);
-					_entity.m_Transform.Translate(glm::vec2(g_EntityManager->GetEntityCount() * -1.0f, -2.0f));
-					_entity.AddAnimation(g_ResourceManager->GetAnimation("player.json", "Walk"));
-
-					g_MasterRenderer->AddDynamicEntity(_entity.m_EntityId, *_entity.m_SpriteSheet);
-				}
-			});
-		g_InputManager->OnKeyDown.Subscribe(_onEntitySpawn);
-
-		EventHandler<i32> _onSerialize([](i32 key)
-			{
-				if (key == GLFW_KEY_F3)
-					g_EntityManager->Save();
-				else if (key == GLFW_KEY_F4)
-					g_EntityManager->Load();
-			});
-		g_InputManager->OnKeyDown.Subscribe(_onSerialize);
-
 		m_InitStatus = true;
+
+		// -- Testing
+		Entity _entity = g_Ecs->CreateEntity();
+		TransformComponent* transform = new TransformComponent();
+		SpriteComponent* sprite = new SpriteComponent(g_ResourceManager->GetTexture("Wood.png"));
+		g_Ecs->AddComponent<TransformComponent>(_entity, *transform);
+		g_Ecs->AddComponent<SpriteComponent>(_entity, *sprite);
 	}
 
 	Game::~Game()

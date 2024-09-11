@@ -1,5 +1,7 @@
 #pragma once
 
+#include <bitset>
+
 namespace tenshi
 {
 #define BIT(X) 1 << X

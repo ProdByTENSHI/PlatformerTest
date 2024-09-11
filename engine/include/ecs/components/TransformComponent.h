@@ -3,23 +3,18 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include "ecs/Component.h"
 #include "tenshiUtil/eventsystem/EventSystem.h"
-#include "tenshiUtil/Types.h"
 
 namespace tenshi
 {
-	struct Transform2D
+	struct TransformComponent : public virtual Component
 	{
-		Transform2D()
-		{
-			Scale(1.0f);
-		}
+		TransformComponent();
+		TransformComponent(const glm::vec2& pos, const glm::vec2& rot, const glm::vec2& scale);
 
-		Transform2D(const glm::vec2& position, const glm::vec2& scale)
-		{
-			Scale(scale);
-			Translate(position);
-		}
+		json Serialize() override;
+		void Deserialize(const json& data) override;
 
 		void Translate(const glm::vec2& translation)
 		{
@@ -58,5 +53,7 @@ namespace tenshi
 		glm::vec2 m_Position = glm::vec2(0.0f);
 		glm::vec2 m_Rotation = glm::vec2(0.0f);
 		glm::vec2 m_Scale = glm::vec2(1.0f);
+
+		const ComponentType m_Type = ComponentType::TransformType;
 	};
 }

@@ -9,8 +9,8 @@
 #include "tenshiUtil/Types.h"
 #include "tenshiUtil/eventsystem/EventSystem.h"
 #include "resources/ResourceManager.h"
+#include "ecs/Ecs.h"
 #include "render/MasterRenderer.h"
-#include "entity/EntityManager.h"
 #include "render/Camera.h"
 #include "input/InputManager.h"
 
@@ -23,7 +23,7 @@ inline GLFWwindow* g_Window = nullptr;
 // -- Systems
 inline std::unique_ptr<tenshi::ResourceManager> g_ResourceManager = nullptr;
 inline std::unique_ptr<tenshi::MasterRenderer> g_MasterRenderer = nullptr;
-inline std::unique_ptr<tenshi::EntityManager> g_EntityManager = nullptr;
+inline std::unique_ptr<tenshi::Ecs> g_Ecs = nullptr;
 inline std::unique_ptr<tenshi::InputManager> g_InputManager = nullptr;
 inline std::unique_ptr<tenshi::Camera> g_Camera = nullptr;
 

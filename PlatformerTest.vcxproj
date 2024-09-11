@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)vendor/hash;$(SolutionDir)game/include;$(SolutionDir)engine/include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)engine/include;$(SolutionDir)vendor/hash;$(SolutionDir)game/include;$(SolutionDir)vendor/stb;$(SolutionDir)vendor/json/single_include;$(SolutionDir)vendor/glm;$(SolutionDir)vendor/glfw/include;$(SolutionDir)vendor/glew/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
@@ -295,6 +295,15 @@
     <ClInclude Include="engine\include\anim\SpriteSheetAnimation.h" />
     <ClInclude Include="engine\include\core\Game.h" />
     <ClInclude Include="engine\include\core\Globals.h" />
+    <ClInclude Include="engine\include\ecs\Component.h" />
+    <ClInclude Include="engine\include\ecs\ComponentArray.h" />
+    <ClInclude Include="engine\include\ecs\components\SpriteComponent.h" />
+    <ClInclude Include="engine\include\ecs\components\TransformComponent.h" />
+    <ClInclude Include="engine\include\ecs\ComponentTypes.h" />
+    <ClInclude Include="engine\include\ecs\Ecs.h" />
+    <ClInclude Include="engine\include\ecs\ECS_Definitions.h" />
+    <ClInclude Include="engine\include\ecs\System.h" />
+    <ClInclude Include="engine\include\ecs\systems\SpriteRenderer.h" />
     <ClInclude Include="engine\include\entity\AnimatedEntity.h" />
     <ClInclude Include="engine\include\entity\Entity.h" />
     <ClInclude Include="engine\include\entity\EntityManager.h" />
@@ -313,12 +322,10 @@
     <ClInclude Include="engine\include\render\SpriteBatch.h" />
     <ClInclude Include="engine\include\resources\ResourceManager.h" />
     <ClInclude Include="engine\include\resources\Shader.h" />
-    <ClInclude Include="engine\include\resources\Sprite.h" />
     <ClInclude Include="engine\include\resources\SpriteSheet.h" />
     <ClInclude Include="engine\include\resources\Texture.h" />
     <ClInclude Include="engine\include\resources\Vertex.h" />
     <ClInclude Include="engine\include\tenshiUtil\eventsystem\EventSystem.h" />
-    <ClInclude Include="engine\include\tenshiUtil\math\Transform2D.h" />
     <ClInclude Include="engine\include\tenshiUtil\memory\UniformBuffer.h" />
     <ClInclude Include="engine\include\tenshiUtil\Types.h" />
     <ClInclude Include="game\include\player\PlayerInputMiddleware.h" />
@@ -696,6 +703,11 @@
     <ClCompile Include="engine\include\tenshiUtil\memory\UniformBuffer.cpp" />
     <ClCompile Include="engine\src\anim\SpriteSheetAnimation.cpp" />
     <ClCompile Include="engine\src\core\Game.cpp" />
+    <ClCompile Include="engine\src\ecs\components\SpriteComponent.cpp" />
+    <ClCompile Include="engine\src\ecs\components\TransformComponent.cpp" />
+    <ClCompile Include="engine\src\ecs\Ecs.cpp" />
+    <ClCompile Include="engine\src\ecs\System.cpp" />
+    <ClCompile Include="engine\src\ecs\systems\SpriteRenderer.cpp" />
     <ClCompile Include="engine\src\entity\AnimatedEntity.cpp" />
     <ClCompile Include="engine\src\entity\Entity.cpp" />
     <ClCompile Include="engine\src\entity\EntityManager.cpp" />

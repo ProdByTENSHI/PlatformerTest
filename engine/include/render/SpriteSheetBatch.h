@@ -4,8 +4,6 @@
 #include <map>
 #include <algorithm>
 
-#include "entity/SpriteSheetEntity.h"
-
 namespace tenshi
 {
 	// All Entities that have the same Texture are in one Batch

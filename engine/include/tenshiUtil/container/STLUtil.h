@@ -47,5 +47,16 @@ namespace tenshi
 
 			return _it;
 		}
+
+		template <IsComparable T> static bool IsElementInVector(const std::vector<T>& vec, const T& element)
+		{
+			for (auto& elem : vec)
+			{
+				if (elem == element)
+					return true;
+			}
+
+			return false;
+		}
 	};
 }
