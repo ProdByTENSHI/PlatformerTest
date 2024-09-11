@@ -5,6 +5,7 @@
 
 #include "resources/Texture.h"
 #include "tenshiUtil/container/STLUtil.h"
+#include "ecs/ECS_Definitions.h"
 
 namespace tenshi
 {
@@ -17,17 +18,17 @@ namespace tenshi
 
 		std::shared_ptr<Texture> m_Texture = nullptr;
 
-		// Holds all Entities that are in this Batch by their IDs
+		// Holds all Entities that are in this Batch
 		// Used to update their Transforms, etc before Drawing
-		std::vector<u32> m_EntityIds;
+		std::vector<Entity> m_Entities;
 
 		GLuint m_Vao = 0;
 		GLuint m_Vbo = 0;
 
-		void RemoveEntity(u32 entityId)
+		void RemoveEntity(Entity entity)
 		{
-			std::vector<u32>::iterator _it = STLUtil::GetItOfElementInVec<u32>(m_EntityIds, entityId);
-			m_EntityIds.erase(_it);
+			std::vector<u32>::iterator _it = STLUtil::GetItOfElementInVec<u32>(m_Entities, entity);
+			m_Entities.erase(_it);
 		}
 
 		bool IsTextureInBatch(std::shared_ptr<Texture> texture)
@@ -38,9 +39,9 @@ namespace tenshi
 			return texture->m_Id == m_Texture->m_Id;
 		}
 
-		bool IsEntityInBatch(u32 entityId)
+		bool IsEntityInBatch(Entity entityId)
 		{
-			for (auto& entity : m_EntityIds)
+			for (auto& entity : m_Entities)
 			{
 				if (entity == entityId)
 					return true;
