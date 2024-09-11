@@ -62,6 +62,11 @@ namespace tenshi
 		_sig.set(ComponentType::SpriteType);
 		m_SpriteRenderer = std::make_unique<SpriteRenderer>(_sig, 0);
 		_sig.reset();
+
+		_sig.set(ComponentType::TransformType);
+		_sig.set(ComponentType::SpriteSheetType);
+		m_SpriteSheetRenderer = std::make_unique<SpriteSheetRenderer>(_sig, 1);
+		_sig.reset();
 	}
 
 	u32 Ecs::GetNextEntityId()

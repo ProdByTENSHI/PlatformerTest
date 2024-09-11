@@ -3,6 +3,10 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <memory>
+
+#include "resources/Texture.h"
+#include "tenshiUtil/container/STLUtil.h"
 
 namespace tenshi
 {
@@ -15,13 +19,13 @@ namespace tenshi
 		std::shared_ptr<Texture> m_Texture = nullptr;
 
 		// Holds all Entities by the Frame they are currently in
-		std::map<u32, std::vector<u32>> m_FrameToEntityId;
+		std::map<u32, std::vector<Entity>> m_FrameToEntityId;
 
 		GLuint m_Vao = 0;
 		GLuint m_Vbo = 0;
 
 		// Moves the Entity from its current Frame in the Map to the new one
-		void MoveEntity(SpriteSheetEntity& entity, u32 previousFrame, u32 newFrame)
+		void MoveEntity(Entity entity, u32 previousFrame, u32 newFrame)
 		{
 			auto& _vec = m_FrameToEntityId[previousFrame];
 
@@ -29,7 +33,7 @@ namespace tenshi
 			// Todo: Rewrite this to use STLUtil Functionality
 			for (i32 i = 0; i < _vec.size(); i++)
 			{
-				if (_vec[i] != entity.m_EntityId)
+				if (_vec[i] != entity)
 					continue;
 
 				_vec.erase(std::next(_vec.begin(), i));
@@ -37,20 +41,20 @@ namespace tenshi
 			}
 
 			if (_wasDeleted)
-				m_FrameToEntityId[newFrame].push_back(entity.m_EntityId);
+				m_FrameToEntityId[newFrame].push_back(entity);
 		}
 
 		void RemoveEntity(u32 entityId)
 		{
 			for (i32 i = 0; i < m_FrameToEntityId.size(); i++)
 			{
-				std::vector<u32>& entities = m_FrameToEntityId[i];
+				std::vector<Entity>& entities = m_FrameToEntityId[i];
 				for (auto& entity : entities)
 				{
 					if (entity != entityId)
 						continue;
 
-					std::vector<u32>::iterator _it = STLUtil::GetItOfElementInVec<u32>(entities, entity);
+					std::vector<u32>::iterator _it = STLUtil::GetItOfElementInVec<Entity>(entities, entity);
 					entities.erase(_it);
 				}
 			}
@@ -64,13 +68,13 @@ namespace tenshi
 			return texture->m_Id == m_Texture->m_Id;
 		}
 
-		bool IsEntityInBatch(u32 entityId)
+		bool IsEntityInBatch(Entity entity)
 		{
 			for (auto& frame : m_FrameToEntityId)
 			{
 				for (auto& entity : frame.second)
 				{
-					if (entity == entityId)
+					if (entity == entity)
 						return true;
 				}
 			}

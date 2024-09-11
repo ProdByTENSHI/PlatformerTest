@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <iostream>
 
 #include "tenshiUtil/Types.h"
 

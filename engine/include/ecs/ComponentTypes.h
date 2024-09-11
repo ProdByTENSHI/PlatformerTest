@@ -6,6 +6,7 @@ namespace tenshi
 	{
 		InvalidType = 0,
 		TransformType = 1,
-		SpriteType = 2
+		SpriteType = 2,
+		SpriteSheetType = 3
 	};
 }

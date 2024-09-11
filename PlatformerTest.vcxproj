@@ -298,12 +298,14 @@
     <ClInclude Include="engine\include\ecs\Component.h" />
     <ClInclude Include="engine\include\ecs\ComponentArray.h" />
     <ClInclude Include="engine\include\ecs\components\SpriteComponent.h" />
+    <ClInclude Include="engine\include\ecs\components\SpriteSheetComponent.h" />
     <ClInclude Include="engine\include\ecs\components\TransformComponent.h" />
     <ClInclude Include="engine\include\ecs\ComponentTypes.h" />
     <ClInclude Include="engine\include\ecs\Ecs.h" />
     <ClInclude Include="engine\include\ecs\ECS_Definitions.h" />
     <ClInclude Include="engine\include\ecs\System.h" />
     <ClInclude Include="engine\include\ecs\systems\SpriteRenderer.h" />
+    <ClInclude Include="engine\include\ecs\systems\SpriteSheetRenderer.h" />
     <ClInclude Include="engine\include\entity\AnimatedEntity.h" />
     <ClInclude Include="engine\include\input\InputData.h" />
     <ClInclude Include="engine\include\input\InputMiddleware.h" />
@@ -700,10 +702,12 @@
     <ClCompile Include="engine\src\anim\SpriteSheetAnimation.cpp" />
     <ClCompile Include="engine\src\core\Game.cpp" />
     <ClCompile Include="engine\src\ecs\components\SpriteComponent.cpp" />
+    <ClCompile Include="engine\src\ecs\components\SpriteSheetComponent.cpp" />
     <ClCompile Include="engine\src\ecs\components\TransformComponent.cpp" />
     <ClCompile Include="engine\src\ecs\Ecs.cpp" />
     <ClCompile Include="engine\src\ecs\System.cpp" />
     <ClCompile Include="engine\src\ecs\systems\SpriteRenderer.cpp" />
+    <ClCompile Include="engine\src\ecs\systems\SpriteSheetRenderer.cpp" />
     <ClCompile Include="engine\src\input\InputManager.cpp" />
     <ClCompile Include="engine\src\input\InputMiddleware.cpp" />
     <ClCompile Include="engine\src\input\InputProvider.cpp" />

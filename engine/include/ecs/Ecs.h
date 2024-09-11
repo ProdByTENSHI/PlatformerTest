@@ -12,6 +12,7 @@
 #include "ecs/System.h"
 #include "ecs/ComponentArray.h"
 #include "ecs/systems/SpriteRenderer.h"
+#include "ecs/systems/SpriteSheetRenderer.h"
 
 namespace tenshi
 {
@@ -76,6 +77,7 @@ namespace tenshi
 		Event<Entity, Signature> m_OnEntitySignatureChange;
 
 		std::unique_ptr<SpriteRenderer> m_SpriteRenderer;
+		std::unique_ptr<SpriteSheetRenderer> m_SpriteSheetRenderer;
 
 	private:
 		// Holds Component Arrays by their typename
