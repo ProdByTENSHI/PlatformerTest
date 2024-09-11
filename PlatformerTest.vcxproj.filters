@@ -1651,21 +1651,6 @@
     <ClInclude Include="engine\include\ecs\systems\SpriteRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\include\entity\AnimatedEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\EntityManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\SpriteEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\include\entity\SpriteSheetEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vendor\glm\glm\detail\glm.cpp">
@@ -1750,21 +1735,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\src\ecs\System.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\AnimatedEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\EntityManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\SpriteEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\src\entity\SpriteSheetEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
