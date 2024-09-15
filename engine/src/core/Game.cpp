@@ -133,6 +133,19 @@ namespace tenshi
 			g_Ecs->AddComponent<TransformComponent>(_spriteSheetEntity, *transform);
 			g_Ecs->AddComponent<SpriteSheetComponent>(_spriteSheetEntity, *spriteSheet);
 		}
+
+		EventHandler<i32> _serialize([](i32 key)
+			{
+				if (key == GLFW_KEY_F3)
+				{
+					g_Ecs->Serialize();
+				}
+				else if (key == GLFW_KEY_F4)
+				{
+					g_Ecs->Deserialize();
+				}
+			});
+		g_InputManager->OnKeyDown.Subscribe(_serialize);
 	}
 
 	Game::~Game()

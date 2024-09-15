@@ -14,11 +14,11 @@ namespace tenshi
 
 		json Serialize() override;
 		void Deserialize(const json& data) override;
+		ComponentType GetType() override;
 
 		void SetFrame(u32 frame);
 
 	public:
-		const ComponentType m_Type = ComponentType::SpriteSheetType;
 		std::shared_ptr<SpriteSheet> m_SpriteSheet = nullptr;
 		u32 m_CurrentFrame = 0;
 

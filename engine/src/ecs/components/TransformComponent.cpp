@@ -29,4 +29,9 @@ namespace tenshi
 	void TransformComponent::Deserialize(const json& data)
 	{
 	}
+
+	ComponentType TransformComponent::GetType()
+	{
+		return ComponentType::TransformType;
+	}
 }

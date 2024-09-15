@@ -44,14 +44,14 @@ namespace tenshi
 				m_FrameToEntityId[newFrame].push_back(entity);
 		}
 
-		void RemoveEntity(u32 entityId)
+		void RemoveEntity(Entity entity)
 		{
 			for (i32 i = 0; i < m_FrameToEntityId.size(); i++)
 			{
 				std::vector<Entity>& entities = m_FrameToEntityId[i];
 				for (auto& entity : entities)
 				{
-					if (entity != entityId)
+					if (entity != entity)
 						continue;
 
 					std::vector<u32>::iterator _it = STLUtil::GetItOfElementInVec<Entity>(entities, entity);
@@ -72,9 +72,9 @@ namespace tenshi
 		{
 			for (auto& frame : m_FrameToEntityId)
 			{
-				for (auto& entity : frame.second)
+				for (auto& val : frame.second)
 				{
-					if (entity == entity)
+					if (entity == val)
 						return true;
 				}
 			}

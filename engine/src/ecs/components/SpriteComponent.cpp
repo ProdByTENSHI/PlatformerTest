@@ -19,4 +19,9 @@ namespace tenshi
 	{
 
 	}
+
+	ComponentType SpriteComponent::GetType()
+	{
+		return ComponentType::SpriteType;
+	}
 }

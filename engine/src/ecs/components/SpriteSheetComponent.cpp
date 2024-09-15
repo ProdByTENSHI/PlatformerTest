@@ -30,4 +30,9 @@ namespace tenshi
 		m_CurrentFrame = frame;
 		m_OnFrameChange.Dispatch(_oldFrame, m_CurrentFrame);
 	}
+
+	ComponentType SpriteSheetComponent::GetType()
+	{
+		return ComponentType::SpriteSheetType;
+	}
 }

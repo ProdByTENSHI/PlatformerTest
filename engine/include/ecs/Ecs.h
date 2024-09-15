@@ -32,7 +32,7 @@ namespace tenshi
 	public:
 		template <IsBaseOfComponent T> void AddComponent(Entity entity, T& component)
 		{
-			ComponentType _type = component.m_Type;
+			ComponentType _type = component.GetType();
 			if (_type == ComponentType::InvalidType)
 			{
 				std::cout << "[ECS] Cannot add Base Component to Entity " << entity << std::endl;

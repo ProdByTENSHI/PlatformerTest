@@ -16,7 +16,6 @@ namespace tenshi
 
 		virtual json Serialize() = 0;
 		virtual void Deserialize(const json& data) = 0;
-
-		const ComponentType m_Type = ComponentType::InvalidType;
+		virtual ComponentType GetType() = 0;
 	};
 }

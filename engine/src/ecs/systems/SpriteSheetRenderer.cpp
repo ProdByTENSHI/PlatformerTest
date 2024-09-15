@@ -106,8 +106,10 @@ namespace tenshi
 					m_Batches.push_back(batch);
 
 					// -- Add to Frame to EntityId
-					batch->m_FrameToEntityId.insert(std::make_pair(_spriteSheet.m_CurrentFrame, std::vector<u32>()));
+					batch->m_FrameToEntityId.insert(std::make_pair(_spriteSheet.m_CurrentFrame, std::vector<Entity>()));
 					batch->m_FrameToEntityId[_spriteSheet.m_CurrentFrame].push_back(entity);
+
+					m_Entities.push_back(entity);
 				}
 				else
 				{
