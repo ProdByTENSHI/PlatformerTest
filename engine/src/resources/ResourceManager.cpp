@@ -1,8 +1,8 @@
 #include "resources/ResourceManager.h"
 
+#include <nlohmann/json.hpp>
 #include <iostream>
 #include <fstream>
-#include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
 
@@ -13,6 +13,7 @@ namespace tenshi
 		if (m_ShaderCache.find(name) != m_ShaderCache.end())
 			return m_ShaderCache[name];
 
+		std::cout << "OS SEP" << OS_SEP << std::endl;
 		std::string _loc = SHADER_LOCATION;
 		_loc += OS_SEP;
 		_loc.append(name);
@@ -20,7 +21,7 @@ namespace tenshi
 			(_loc + ".vert", _loc + ".frag");
 		if (_shader == nullptr)
 		{
-			std::cerr << "Could not load Shader " << name << std::endl;
+			std::cerr << "Could not load Shader " << _loc << std::endl;
 			return nullptr;
 		}
 

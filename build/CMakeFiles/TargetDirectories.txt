@@ -1,0 +1,10 @@
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/Platformer.dir
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/INSTALL.dir
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/vendor/glfw/CMakeFiles/uninstall.dir
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/vendor/glfw/CMakeFiles/INSTALL.dir
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/vendor/glfw/CMakeFiles/ALL_BUILD.dir
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/vendor/glfw/src/CMakeFiles/glfw.dir
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/vendor/glfw/src/CMakeFiles/update_mappings.dir
+C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/vendor/glfw/src/CMakeFiles/INSTALL.dir

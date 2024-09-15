@@ -2,7 +2,6 @@
 
 #include <GL/glew.h>
 #include <iostream>
-#include <sstream>
 
 #include "core/Globals.h"
 #include "resources/SpriteSheet.h"
@@ -14,6 +13,7 @@ namespace tenshi
 {
 	Entity _spriteSheetEntity;
 
+#pragma region DebugUtil
 	void glewMessageCallback(GLenum source, GLenum type, GLuint id, GLenum severity,
 		GLsizei length, GLchar const* message, void const* user_param)
 	{
@@ -71,7 +71,8 @@ namespace tenshi
 			{
 				std::cerr << "GLFW Error " << code << ": " << description << std::endl;
 			});
-
+	#pragma endregion
+	
 
 		glfwWindowHint(GLFW_DOUBLEBUFFER, GLFW_TRUE);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
