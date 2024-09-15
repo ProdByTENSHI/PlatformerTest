@@ -1,7 +1,5 @@
 #include "anim/SpriteSheetAnimation.h"
 
-#include <iostream>
-
 #include "core/Globals.h"
 
 namespace tenshi

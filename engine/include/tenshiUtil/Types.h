@@ -5,12 +5,7 @@
 namespace tenshi
 {
 #define BIT(X) 1 << X
-
-#ifdef WIN32
-#define OS_SEP '\\'
-#else
 #define OS_SEP '/'
-#endif
 
 	typedef char byte;
 	typedef unsigned char uByte;

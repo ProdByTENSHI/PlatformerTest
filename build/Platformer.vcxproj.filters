@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\anim\SpriteSheetAnimation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\core\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\ecs\Ecs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\ecs\System.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\ecs\components\SpriteComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\ecs\components\SpriteSheetComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\ecs\components\TransformComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\ecs\systems\SpriteRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\ecs\systems\SpriteSheetRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\input\InputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\input\InputMiddleware.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\input\InputProvider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\render\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\render\MasterRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\resources\ResourceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\resources\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\resources\SpriteSheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\src\resources\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\game\src\player\PlayerInputMiddleware.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\include\tenshiUtil\memory\Ssbo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\engine\include\tenshiUtil\memory\UniformBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{783784CB-378E-38F0-B087-FAC8FAAE1ED7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
