@@ -12,6 +12,7 @@
 #include "ecs/System.h"
 #include "ecs/ComponentArray.h"
 #include "ecs/systems/SpriteRenderer.h"
+#include "ecs/systems/SpriteSheetRenderer.h"
 
 namespace tenshi
 {
@@ -26,18 +27,23 @@ namespace tenshi
 
 		Entity CreateEntity();
 		void DestroyEntity(Entity entity);
+		void Init();
 
 	public:
 		template <IsBaseOfComponent T> void AddComponent(Entity entity, T& component)
 		{
-			ComponentType _type = component.m_Type;
+			ComponentType _type = component.GetType();
 			if (_type == ComponentType::InvalidType)
 			{
 				std::cout << "[ECS] Cannot add Base Component to Entity " << entity << std::endl;
 				return;
 			}
 
-			m_ComponentArrays[typeid(T).name()]->m_EntityToComponent
+			const char* _typeName = typeid(T).name();
+			if (m_ComponentArrays.find(_typeName) == m_ComponentArrays.end())
+				m_ComponentArrays.insert(std::make_pair(_typeName, new ComponentArray<T>()));
+
+			m_ComponentArrays[_typeName]->m_EntityToComponent
 				.insert(std::make_pair(entity, &component));
 			m_EntitySignatures[entity].set(_type);
 			m_OnEntitySignatureChange.Dispatch(entity, m_EntitySignatures[entity]);
@@ -71,6 +77,7 @@ namespace tenshi
 		Event<Entity, Signature> m_OnEntitySignatureChange;
 
 		std::unique_ptr<SpriteRenderer> m_SpriteRenderer;
+		std::unique_ptr<SpriteSheetRenderer> m_SpriteSheetRenderer;
 
 	private:
 		// Holds Component Arrays by their typename

@@ -1552,9 +1552,6 @@
     <ClInclude Include="engine\include\render\SpriteSheetBatch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="engine\include\tenshiUtil\memory\Ssbo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="engine\include\render\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1651,6 +1648,18 @@
     <ClInclude Include="engine\include\ecs\systems\SpriteRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\include\entity\AnimatedEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\tenshiUtil\memory\Ssbo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\components\SpriteSheetComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\include\ecs\systems\SpriteSheetRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vendor\glm\glm\detail\glm.cpp">
@@ -1735,6 +1744,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="engine\src\ecs\System.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\ecs\components\SpriteSheetComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\src\ecs\systems\SpriteSheetRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

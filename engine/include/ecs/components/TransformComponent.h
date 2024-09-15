@@ -15,6 +15,7 @@ namespace tenshi
 
 		json Serialize() override;
 		void Deserialize(const json& data) override;
+		ComponentType GetType() override;
 
 		void Translate(const glm::vec2& translation)
 		{

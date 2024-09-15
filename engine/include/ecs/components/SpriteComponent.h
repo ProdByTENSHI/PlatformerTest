@@ -14,9 +14,9 @@ namespace tenshi
 
 		json Serialize() override;
 		void Deserialize(const json& data) override;
+		ComponentType GetType() override;
 
 	public:
-		const ComponentType m_Type = ComponentType::SpriteType;
 		const std::shared_ptr<Texture> m_Texture = nullptr;
 	};
 }

@@ -20,10 +20,10 @@ namespace tenshi
 					for (i32 i = 0; i < m_Batches.size(); i++)
 					{
 						auto& _batch = m_Batches[i];
-						if (!_batch->IsTextureInBatch(_sprite.m_Texture) || _batch->m_EntityIds.size() >= MAX_SPRITES_PER_BATCH)
+						if (!_batch->IsTextureInBatch(_sprite.m_Texture) || _batch->m_Entities.size() >= MAX_SPRITES_PER_BATCH)
 							continue;
 
-						_batch->m_EntityIds.push_back(entity);
+						_batch->m_Entities.push_back(entity);
 
 						// -- Subscribe to Transform onChangeEvent to only change the Transforms Buffer when Data changed
 						EventHandler<glm::mat4, glm::vec2, glm::vec2, glm::vec2> _onTransformChange
@@ -41,7 +41,7 @@ namespace tenshi
 					}
 
 					SpriteBatch* batch = new SpriteBatch(_sprite.m_Texture);
-					batch->m_EntityIds.push_back(entity);
+					batch->m_Entities.push_back(entity);
 
 					// -- Setup GL Buffers
 					glCreateVertexArrays(1, &batch->m_Vao);
@@ -78,6 +78,15 @@ namespace tenshi
 					if (_it == m_Entities.end())
 						return 0;
 
+					for (auto& batch : m_Batches)
+					{
+						if (!batch->IsEntityInBatch(entity))
+							continue;
+
+						batch->RemoveEntity(entity);
+						break;
+					}
+
 					m_Entities.erase(_it);
 				}
 			});
@@ -101,18 +110,18 @@ namespace tenshi
 			batch->m_Texture->Bind();
 
 			// Send Entity IDs for this Draw Calls to the GPU
-			for (i32 i = 0; i < batch->m_EntityIds.size(); i++)
+			for (i32 i = 0; i < batch->m_Entities.size(); i++)
 			{
 				g_MasterRenderer->m_EntityIdsUbo.SubBufferData((_baseOffset + i) * sizeof(i32), sizeof(i32),
-					&batch->m_EntityIds[i]);
+					&batch->m_Entities[i]);
 			}
 
-			glDrawArraysInstancedBaseInstance(GL_TRIANGLES, 0, 6, batch->m_EntityIds.size(), _baseOffset);
+			glDrawArraysInstancedBaseInstance(GL_TRIANGLES, 0, 6, batch->m_Entities.size(), _baseOffset);
 
 			batch->m_Texture->Unbind();
 			glBindVertexArray(0);
 
-			_baseOffset += batch->m_EntityIds.size();
+			_baseOffset += batch->m_Entities.size();
 		}
 	}
 }

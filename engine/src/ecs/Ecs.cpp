@@ -6,7 +6,6 @@ namespace tenshi
 {
 	Ecs::Ecs()
 	{
-		InitSystems();
 	}
 
 	Ecs::~Ecs()
@@ -33,27 +32,61 @@ namespace tenshi
 
 		m_EntityIdStack.push(entity);
 		--m_EntityCount;
+
+		std::cout << "Destroyed Entity " << entity << std::endl;
 	}
 
 	void Ecs::Serialize()
 	{
-		json _data;
+		json _finalData;
+		std::vector<json> _entityData;
+		_entityData.resize(m_EntityCount);
 
 		for (auto& arr : m_ComponentArrays)
 		{
 			for (auto& component : arr.second->m_EntityToComponent)
 			{
-				_data.push_back(component.second->Serialize());
+				json _temp;
+				std::string _entityId = std::to_string(component.first);
+				_temp[std::to_string(component.second->GetType())] = component.second->Serialize();
+				_entityData[component.first][_entityId].push_back(_temp);
 			}
 		}
 
+		for (i32 i = 0; i < m_EntityCount; i++)
+		{
+			_finalData.push_back(_entityData[i]);
+		}
+
 		std::fstream _stream(ENTITIES_DATA_PATH, std::ios::out);
-		_stream << _data;
+		_stream << _finalData;
 		_stream.close();
+
+		for (i32 i = 0; i <= m_EntityCount; i++)
+		{
+			DestroyEntity(i);
+		}
 	}
 
 	void Ecs::Deserialize()
 	{
+		std::fstream _stream(ENTITIES_DATA_PATH, std::ios::in);
+		if (!_stream.is_open())
+		{
+			std::cerr << "[ECS] Could not opem Entity Data File" << std::endl;
+			return;
+		}
+
+		json _data;
+		_stream >> _data;
+
+		for (auto& entity : _data.items())
+		{
+			for (auto& component : entity.value().items())
+			{
+				std::cout << component.key() << " " << component.value() << std::endl;
+			}
+		}
 	}
 
 	void Ecs::InitSystems()
@@ -62,6 +95,11 @@ namespace tenshi
 		_sig.set(ComponentType::TransformType);
 		_sig.set(ComponentType::SpriteType);
 		m_SpriteRenderer = std::make_unique<SpriteRenderer>(_sig, 0);
+		_sig.reset();
+
+		_sig.set(ComponentType::TransformType);
+		_sig.set(ComponentType::SpriteSheetType);
+		m_SpriteSheetRenderer = std::make_unique<SpriteSheetRenderer>(_sig, 1);
 		_sig.reset();
 	}
 
@@ -79,5 +117,10 @@ namespace tenshi
 		}
 
 		return _id;
+	}
+
+	void Ecs::Init()
+	{
+		InitSystems();
 	}
 }

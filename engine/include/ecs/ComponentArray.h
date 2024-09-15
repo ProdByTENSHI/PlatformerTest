@@ -24,10 +24,10 @@ namespace tenshi
 		std::map<Entity, Component*> m_EntityToComponent;
 	};
 
-	template <class T> class ComponentArray : BaseComponentArray
+	template <class T> class ComponentArray : public BaseComponentArray
 	{
 	public:
-		void AddComponent(Entity entity, T& component) override
+		void AddComponent(Entity entity, T& component)
 		{
 			if (m_EntityToComponent[entity] != nullptr)
 			{
@@ -38,7 +38,7 @@ namespace tenshi
 			m_EntityToComponent.insert(std::make_pair(entity, &component));
 		}
 
-		void RemoveComponent(Entity entity) override
+		void RemoveComponent(Entity entity)
 		{
 			for (auto& pair : m_EntityToComponent)
 			{

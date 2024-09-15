@@ -8,10 +8,11 @@
 #include "resources/SpriteSheet.h"
 #include "ecs/components/TransformComponent.h"
 #include "ecs/components/SpriteComponent.h"
+#include "ecs/components/SpriteSheetComponent.h"
 
 namespace tenshi
 {
-	u32 _spriteSheetEntity = 0;
+	Entity _spriteSheetEntity;
 
 	void glewMessageCallback(GLenum source, GLenum type, GLuint id, GLenum severity,
 		GLsizei length, GLchar const* message, void const* user_param)
@@ -112,16 +113,39 @@ namespace tenshi
 		g_MasterRenderer = std::make_unique<MasterRenderer>();
 		g_InputManager = std::make_unique<InputManager>();
 		g_Ecs = std::make_unique<Ecs>();
+		g_Ecs->Init();
 		g_Camera = std::make_unique<Camera>();
 
 		m_InitStatus = true;
 
 		// -- Testing
-		Entity _entity = g_Ecs->CreateEntity();
-		TransformComponent* transform = new TransformComponent();
-		SpriteComponent* sprite = new SpriteComponent(g_ResourceManager->GetTexture("Wood.png"));
-		g_Ecs->AddComponent<TransformComponent>(_entity, *transform);
-		g_Ecs->AddComponent<SpriteComponent>(_entity, *sprite);
+		{
+			Entity _entity = g_Ecs->CreateEntity();
+			TransformComponent* transform = new TransformComponent();
+			SpriteComponent* sprite = new SpriteComponent(g_ResourceManager->GetTexture("Wood.png"));
+			g_Ecs->AddComponent<TransformComponent>(_entity, *transform);
+			g_Ecs->AddComponent<SpriteComponent>(_entity, *sprite);
+		}
+		{
+			_spriteSheetEntity = g_Ecs->CreateEntity();
+			TransformComponent* transform = new TransformComponent(glm::vec2(2.0f, 1.0f), glm::vec2(0.0f), glm::vec2(1.0f));
+			SpriteSheetComponent* spriteSheet = new SpriteSheetComponent(g_ResourceManager->GetSpriteSheet("Player"));
+			g_Ecs->AddComponent<TransformComponent>(_spriteSheetEntity, *transform);
+			g_Ecs->AddComponent<SpriteSheetComponent>(_spriteSheetEntity, *spriteSheet);
+		}
+
+		EventHandler<i32> _serialize([](i32 key)
+			{
+				if (key == GLFW_KEY_F3)
+				{
+					g_Ecs->Serialize();
+				}
+				else if (key == GLFW_KEY_F4)
+				{
+					g_Ecs->Deserialize();
+				}
+			});
+		g_InputManager->OnKeyDown.Subscribe(_serialize);
 	}
 
 	Game::~Game()
@@ -134,6 +158,10 @@ namespace tenshi
 	{
 		f32 _lastFrameTime = 0.0f;
 		f32 _currentFrameTime = 0.0f;
+		f32 _fps = 0.075f;
+		f32 _counter = 0.0f;
+
+		SpriteSheetComponent& _spriteSheet = *g_Ecs->GetComponent<SpriteSheetComponent>(_spriteSheetEntity);
 
 		while (!glfwWindowShouldClose(g_Window) && m_InitStatus)
 		{
