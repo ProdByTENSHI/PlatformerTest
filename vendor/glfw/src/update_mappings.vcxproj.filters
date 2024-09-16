@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\CMakeFiles\9a1e16cedf756655be92d5f1cf03cf52\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\vendor\glfw\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\vendor\glfw\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\vendor\glfw\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\LeonS\Desktop\Game Dev\Games\Platformer Test\vendor\glfw\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5DDD5CAE-2715-3387-8B3A-28E4A684F30F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{EA2F4680-8609-30C5-BF98-E72F19FFBFC3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -17,52 +17,39 @@ events:
       - "CMakeLists.txt:5 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler:  
+      Compiler: C:/ProgramData/clang/bin/clang.exe 
       Build flags: 
       Id flags:  
       
       The output was:
       0
-      MSBuild-Version 17.9.8+b34f75857 für .NET Framework
-      Der Buildvorgang wurde am 15.09.2024 20:18:34 gestartet.
-      
-      Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" auf Knoten "1" (Standardziele).
-      PrepareForBuild:
-        Das Verzeichnis "Debug\\" wird erstellt.
-        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-        Das Verzeichnis "Debug\\CompilerIdC.tlog\\" wird erstellt.
-      InitializeBuildStatus:
-        "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-        Aktualisieren des Timestamps von "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
-      ClCompile:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
-        CMakeCCompilerId.c
-      Link:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe
-      PostBuildEvent:
-        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
-        :VCEnd
-        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\Hostx64\\x64\\cl.exe
-      FinalizeBuildStatus:
-        Die Datei "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" wird gelöscht.
-        Aktualisieren des Timestamps von "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
-      Die Erstellung von Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" ist abgeschlossen (Standardziele).
-      
-      Der Buildvorgang wurde erfolgreich ausgeführt.
-          0 Warnung(en)
-          0 Fehler
-      
-      Verstrichene Zeit 00:00:00.47
       
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      The C compiler identification is Clang, found in:
+        C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/3.28.1/CompilerIdC/a.exe
       
-      The C compiler identification is MSVC, found in:
-        C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/3.28.1/CompilerIdC/CompilerIdC.exe
-      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:1182 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:247 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Detecting C compiler /showIncludes prefix:
+        
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:1182 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:247 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Detecting C compiler /showIncludes prefix:
+        
   -
     kind: "message-v1"
     backtrace:
@@ -72,52 +59,39 @@ events:
       - "CMakeLists.txt:5 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler:  
+      Compiler: C:/ProgramData/clang/bin/clang++.exe 
       Build flags: 
       Id flags:  
       
       The output was:
       0
-      MSBuild-Version 17.9.8+b34f75857 für .NET Framework
-      Der Buildvorgang wurde am 15.09.2024 20:18:35 gestartet.
-      
-      Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" auf Knoten "1" (Standardziele).
-      PrepareForBuild:
-        Das Verzeichnis "Debug\\" wird erstellt.
-        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-        Das Verzeichnis "Debug\\CompilerIdCXX.tlog\\" wird erstellt.
-      InitializeBuildStatus:
-        "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-        Aktualisieren des Timestamps von "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
-      ClCompile:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
-        CMakeCXXCompilerId.cpp
-      Link:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe
-      PostBuildEvent:
-        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
-        :VCEnd
-        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\Hostx64\\x64\\cl.exe
-      FinalizeBuildStatus:
-        Die Datei "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" wird gelöscht.
-        Aktualisieren des Timestamps von "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      Die Erstellung von Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" ist abgeschlossen (Standardziele).
-      
-      Der Buildvorgang wurde erfolgreich ausgeführt.
-          0 Warnung(en)
-          0 Fehler
-      
-      Verstrichene Zeit 00:00:00.36
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      The CXX compiler identification is Clang, found in:
+        C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/3.28.1/CompilerIdCXX/a.exe
       
-      The CXX compiler identification is MSVC, found in:
-        C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/3.28.1/CompilerIdCXX/CompilerIdCXX.exe
-      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:1182 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:247 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Detecting CXX compiler /showIncludes prefix:
+        
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:1182 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:247 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Detecting CXX compiler /showIncludes prefix:
+        
   -
     kind: "try_compile-v1"
     backtrace:
@@ -127,50 +101,27 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k8novd"
-      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k8novd"
+      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-mg4kw2"
+      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-mg4kw2"
     cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
-      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/ProgramData/clang/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-O0 -g -Xclang -gcodeview"
+      CMAKE_EXE_LINKER_FLAGS: ""
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k8novd'
+        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-mg4kw2'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1bc5a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild-Version 17.9.8+b34f75857 für .NET Framework
-        Der Buildvorgang wurde am 15.09.2024 20:18:35 gestartet.
-        
-        Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k8novd\\cmTC_1bc5a.vcxproj" auf Knoten "1" (Standardziele).
-        PrepareForBuild:
-          Das Verzeichnis "cmTC_1bc5a.dir\\Debug\\" wird erstellt.
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Das Verzeichnis "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k8novd\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_1bc5a.dir\\Debug\\cmTC_1bc5a.tlog\\" wird erstellt.
-        InitializeBuildStatus:
-          "cmTC_1bc5a.dir\\Debug\\cmTC_1bc5a.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-          Aktualisieren des Timestamps von "cmTC_1bc5a.dir\\Debug\\cmTC_1bc5a.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1bc5a.dir\\Debug\\\\" /Fd"cmTC_1bc5a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1bc5a.dir\\Debug\\\\" /Fd"cmTC_1bc5a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
-          CMakeCCompilerABI.c
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k8novd\\Debug\\cmTC_1bc5a.exe" /INCREMENTAL /ILK:"cmTC_1bc5a.dir\\Debug\\cmTC_1bc5a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k8novd/Debug/cmTC_1bc5a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k8novd/Debug/cmTC_1bc5a.lib" /MACHINE:X64  /machine:x64 cmTC_1bc5a.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_1bc5a.vcxproj -> C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k8novd\\Debug\\cmTC_1bc5a.exe
-        FinalizeBuildStatus:
-          Die Datei "cmTC_1bc5a.dir\\Debug\\cmTC_1bc5a.tlog\\unsuccessfulbuild" wird gelöscht.
-          Aktualisieren des Timestamps von "cmTC_1bc5a.dir\\Debug\\cmTC_1bc5a.tlog\\cmTC_1bc5a.lastbuildstate".
-        Die Erstellung von Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k8novd\\cmTC_1bc5a.vcxproj" ist abgeschlossen (Standardziele).
-        
-        Der Buildvorgang wurde erfolgreich ausgeführt.
-            0 Warnung(en)
-            0 Fehler
-        
-        Verstrichene Zeit 00:00:00.33
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~2/GnuWin32/bin/make.exe -f Makefile cmTC_d313e/fast
+        C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_d313e.dir/build.make CMakeFiles/cmTC_d313e.dir/build
+        make.exe[1]: Entering directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-mg4kw2'
+        Building C object CMakeFiles/cmTC_d313e.dir/CMakeCCompilerABI.c.obj
+        C:/ProgramData/clang/bin/clang.exe   -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_d313e.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles/cmTC_d313e.dir/CMakeCCompilerABI.c.obj.d -o CMakeFiles/cmTC_d313e.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
+        Linking C executable cmTC_d313e.exe
+        C:/ProgramData/clang/bin/clang.exe -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console @CMakeFiles/cmTC_d313e.dir/objects1.rsp -o cmTC_d313e.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_d313e.lib -Xlinker /pdb:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-mg4kw2/cmTC_d313e.pdb" -Xlinker /version:0.0  
+        make.exe[1]: Leaving directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-mg4kw2'
         
       exitCode: 0
   -
@@ -182,56 +133,99 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k2yo3v"
-      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k2yo3v"
+      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-i734gz"
+      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-i734gz"
     cmakeVariables:
-      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
-      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/ProgramData/clang/bin/clang-scan-deps.exe"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-O0 -g -Xclang -gcodeview"
+      CMAKE_EXE_LINKER_FLAGS: ""
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k2yo3v'
+        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-i734gz'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_82f69.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild-Version 17.9.8+b34f75857 für .NET Framework
-        Der Buildvorgang wurde am 15.09.2024 20:18:36 gestartet.
-        
-        Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k2yo3v\\cmTC_82f69.vcxproj" auf Knoten "1" (Standardziele).
-        PrepareForBuild:
-          Das Verzeichnis "cmTC_82f69.dir\\Debug\\" wird erstellt.
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Das Verzeichnis "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k2yo3v\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_82f69.dir\\Debug\\cmTC_82f69.tlog\\" wird erstellt.
-        InitializeBuildStatus:
-          "cmTC_82f69.dir\\Debug\\cmTC_82f69.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-          Aktualisieren des Timestamps von "cmTC_82f69.dir\\Debug\\cmTC_82f69.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++20 /Fo"cmTC_82f69.dir\\Debug\\\\" /Fd"cmTC_82f69.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++20 /Fo"cmTC_82f69.dir\\Debug\\\\" /Fd"cmTC_82f69.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
-          CMakeCXXCompilerABI.cpp
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k2yo3v\\Debug\\cmTC_82f69.exe" /INCREMENTAL /ILK:"cmTC_82f69.dir\\Debug\\cmTC_82f69.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k2yo3v/Debug/cmTC_82f69.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-k2yo3v/Debug/cmTC_82f69.lib" /MACHINE:X64  /machine:x64 cmTC_82f69.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_82f69.vcxproj -> C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k2yo3v\\Debug\\cmTC_82f69.exe
-        FinalizeBuildStatus:
-          Die Datei "cmTC_82f69.dir\\Debug\\cmTC_82f69.tlog\\unsuccessfulbuild" wird gelöscht.
-          Aktualisieren des Timestamps von "cmTC_82f69.dir\\Debug\\cmTC_82f69.tlog\\cmTC_82f69.lastbuildstate".
-        Die Erstellung von Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-k2yo3v\\cmTC_82f69.vcxproj" ist abgeschlossen (Standardziele).
-        
-        Der Buildvorgang wurde erfolgreich ausgeführt.
-            0 Warnung(en)
-            0 Fehler
-        
-        Verstrichene Zeit 00:00:00.32
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~2/GnuWin32/bin/make.exe -f Makefile cmTC_13f09/fast
+        C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_13f09.dir/build.make CMakeFiles/cmTC_13f09.dir/build
+        make.exe[1]: Entering directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-i734gz'
+        Building CXX object CMakeFiles/cmTC_13f09.dir/CMakeCXXCompilerABI.cpp.obj
+        C:/ProgramData/clang/bin/clang++.exe   -O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_13f09.dir/CMakeCXXCompilerABI.cpp.obj -MF CMakeFiles/cmTC_13f09.dir/CMakeCXXCompilerABI.cpp.obj.d -o CMakeFiles/cmTC_13f09.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp"
+        Linking CXX executable cmTC_13f09.exe
+        C:/ProgramData/clang/bin/clang++.exe -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console @CMakeFiles/cmTC_13f09.dir/objects1.rsp -o cmTC_13f09.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_13f09.lib -Xlinker /pdb:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-i734gz/cmTC_13f09.pdb" -Xlinker /version:0.0  
+        make.exe[1]: Leaving directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-i734gz'
         
       exitCode: 0
-...
-
----
-events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:34 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:84 (_record_compiler_features)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake:121 (_record_compiler_features_cxx)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake:70 (cmake_record_cxx_compile_features)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:70 (CMAKE_DETERMINE_COMPILE_FEATURES)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting CXX compile features"
+    directories:
+      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-isv201"
+      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-isv201"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/ProgramData/clang/bin/clang-scan-deps.exe"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-O0 -g -Xclang -gcodeview"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_FEATURE_TEST"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-isv201'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~2/GnuWin32/bin/make.exe -f Makefile cmTC_2c1d7/fast
+        C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_2c1d7.dir/build.make CMakeFiles/cmTC_2c1d7.dir/build
+        make.exe[1]: Entering directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-isv201'
+        Building CXX object CMakeFiles/cmTC_2c1d7.dir/feature_tests.cxx.obj
+        C:/ProgramData/clang/bin/clang++.exe   -O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd   -std=c++14 -MD -MT CMakeFiles/cmTC_2c1d7.dir/feature_tests.cxx.obj -MF CMakeFiles/cmTC_2c1d7.dir/feature_tests.cxx.obj.d -o CMakeFiles/cmTC_2c1d7.dir/feature_tests.cxx.obj -c "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-isv201/feature_tests.cxx"
+        Linking CXX executable cmTC_2c1d7.exe
+        C:/ProgramData/clang/bin/clang++.exe -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console @CMakeFiles/cmTC_2c1d7.dir/objects1.rsp -o cmTC_2c1d7.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_2c1d7.lib -Xlinker /pdb:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-isv201/cmTC_2c1d7.pdb" -Xlinker /version:0.0  @CMakeFiles/cmTC_2c1d7.dir/linkLibs.rsp 
+        make.exe[1]: Leaving directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-isv201'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:34 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:84 (_record_compiler_features)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake:129 (_record_compiler_features_cxx)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake:70 (cmake_record_cxx_compile_features)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:70 (CMAKE_DETERMINE_COMPILE_FEATURES)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting CXX compile features"
+    directories:
+      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-hw92dw"
+      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-hw92dw"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/ProgramData/clang/bin/clang-scan-deps.exe"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-O0 -g -Xclang -gcodeview"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_FEATURE_TEST"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-hw92dw'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~2/GnuWin32/bin/make.exe -f Makefile cmTC_cdd7a/fast
+        C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_cdd7a.dir/build.make CMakeFiles/cmTC_cdd7a.dir/build
+        make.exe[1]: Entering directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-hw92dw'
+        Building CXX object CMakeFiles/cmTC_cdd7a.dir/feature_tests.cxx.obj
+        C:/ProgramData/clang/bin/clang++.exe   -O0 -g -Xclang -gcodeview -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd   -std=c++14 -MD -MT CMakeFiles/cmTC_cdd7a.dir/feature_tests.cxx.obj -MF CMakeFiles/cmTC_cdd7a.dir/feature_tests.cxx.obj.d -o CMakeFiles/cmTC_cdd7a.dir/feature_tests.cxx.obj -c "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-hw92dw/feature_tests.cxx"
+        Linking CXX executable cmTC_cdd7a.exe
+        C:/ProgramData/clang/bin/clang++.exe -fuse-ld=lld-link -nostartfiles -nostdlib -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console @CMakeFiles/cmTC_cdd7a.dir/objects1.rsp -o cmTC_cdd7a.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_cdd7a.lib -Xlinker /pdb:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-hw92dw/cmTC_cdd7a.pdb" -Xlinker /version:0.0  @CMakeFiles/cmTC_cdd7a.dir/linkLibs.rsp 
+        make.exe[1]: Leaving directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-hw92dw'
+        
+      exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
@@ -243,53 +237,34 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-lgo7gq"
-      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-lgo7gq"
+      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-f87zj4"
+      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-f87zj4"
     cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
-      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/ProgramData/clang/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-O0 -g -Xclang -gcodeview"
+      CMAKE_EXE_LINKER_FLAGS: ""
       CMAKE_MODULE_PATH: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/vendor/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-lgo7gq'
+        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-f87zj4'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3bdc7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild-Version 17.9.8+b34f75857 für .NET Framework
-        Der Buildvorgang wurde am 15.09.2024 21:10:28 gestartet.
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~2/GnuWin32/bin/make.exe -f Makefile cmTC_6c97f/fast
+        C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_6c97f.dir/build.make CMakeFiles/cmTC_6c97f.dir/build
+        make.exe[1]: Entering directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-f87zj4'
+        Building C object CMakeFiles/cmTC_6c97f.dir/src.c.obj
+        C:/ProgramData/clang/bin/clang.exe -DCMAKE_HAVE_LIBC_PTHREAD  -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_6c97f.dir/src.c.obj -MF CMakeFiles/cmTC_6c97f.dir/src.c.obj.d -o CMakeFiles/cmTC_6c97f.dir/src.c.obj -c "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-f87zj4/src.c"
+        C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-f87zj4/src.c:1:10: fatal error: 'pthread.h' file not found
+            1 | #include <pthread.h>
+              |          ^~~~~~~~~~~
+        1 error generated.
+        make.exe[1]: *** [CMakeFiles/cmTC_6c97f.dir/src.c.obj] Fehler 1
+        make.exe[1]: Leaving directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-f87zj4'
+        make.exe: *** [cmTC_6c97f/fast] Fehler 2
         
-        Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\cmTC_3bdc7.vcxproj" auf Knoten "1" (Standardziele).
-        PrepareForBuild:
-          Das Verzeichnis "cmTC_3bdc7.dir\\Debug\\" wird erstellt.
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Das Verzeichnis "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_3bdc7.dir\\Debug\\cmTC_3bdc7.tlog\\" wird erstellt.
-        InitializeBuildStatus:
-          "cmTC_3bdc7.dir\\Debug\\cmTC_3bdc7.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-          Aktualisieren des Timestamps von "cmTC_3bdc7.dir\\Debug\\cmTC_3bdc7.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3bdc7.dir\\Debug\\\\" /Fd"cmTC_3bdc7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\src.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3bdc7.dir\\Debug\\\\" /Fd"cmTC_3bdc7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\src.c"
-          src.c
-        C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\cmTC_3bdc7.vcxproj]
-        Die Erstellung des Projekts "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\cmTC_3bdc7.vcxproj" ist abgeschlossen (Standardziele) -- FEHLER.
-        
-        Fehler beim Buildvorgang.
-        
-        "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\cmTC_3bdc7.vcxproj" (Standardziel) (1) ->
-        (ClCompile Ziel) -> 
-          C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lgo7gq\\cmTC_3bdc7.vcxproj]
-        
-            0 Warnung(en)
-            1 Fehler
-        
-        Verstrichene Zeit 00:00:00.36
-        
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -300,55 +275,34 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-auk98r"
-      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-auk98r"
+      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-34vxd0"
+      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-34vxd0"
     cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
-      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/ProgramData/clang/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-O0 -g -Xclang -gcodeview"
+      CMAKE_EXE_LINKER_FLAGS: ""
       CMAKE_MODULE_PATH: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/vendor/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-auk98r'
+        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-34vxd0'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_98fdf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild-Version 17.9.8+b34f75857 für .NET Framework
-        Der Buildvorgang wurde am 15.09.2024 21:10:29 gestartet.
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~2/GnuWin32/bin/make.exe -f Makefile cmTC_3748d/fast
+        C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_3748d.dir/build.make CMakeFiles/cmTC_3748d.dir/build
+        make.exe[1]: Entering directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-34vxd0'
+        Building C object CMakeFiles/cmTC_3748d.dir/CheckFunctionExists.c.obj
+        C:/ProgramData/clang/bin/clang.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_3748d.dir/CheckFunctionExists.c.obj -MF CMakeFiles/cmTC_3748d.dir/CheckFunctionExists.c.obj.d -o CMakeFiles/cmTC_3748d.dir/CheckFunctionExists.c.obj -c "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-34vxd0/CheckFunctionExists.c"
+        Linking C executable cmTC_3748d.exe
+        C:/ProgramData/clang/bin/clang.exe -fuse-ld=lld-link -nostartfiles -nostdlib  -DCHECK_FUNCTION_EXISTS=pthread_create -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console @CMakeFiles/cmTC_3748d.dir/objects1.rsp -o cmTC_3748d.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_3748d.lib -Xlinker /pdb:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-34vxd0/cmTC_3748d.pdb" -Xlinker /version:0.0  @CMakeFiles/cmTC_3748d.dir/linkLibs.rsp 
+        lld-link: error: could not open 'pthreads.lib': no such file or directory
+        clang: error: linker command failed with exit code 1 (use -v to see invocation)
+        make.exe[1]: *** [cmTC_3748d.exe] Fehler 1
+        make.exe[1]: Leaving directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-34vxd0'
+        make.exe: *** [cmTC_3748d/fast] Fehler 2
         
-        Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auk98r\\cmTC_98fdf.vcxproj" auf Knoten "1" (Standardziele).
-        PrepareForBuild:
-          Das Verzeichnis "cmTC_98fdf.dir\\Debug\\" wird erstellt.
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Das Verzeichnis "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auk98r\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_98fdf.dir\\Debug\\cmTC_98fdf.tlog\\" wird erstellt.
-        InitializeBuildStatus:
-          "cmTC_98fdf.dir\\Debug\\cmTC_98fdf.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-          Aktualisieren des Timestamps von "cmTC_98fdf.dir\\Debug\\cmTC_98fdf.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_98fdf.dir\\Debug\\\\" /Fd"cmTC_98fdf.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auk98r\\CheckFunctionExists.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_98fdf.dir\\Debug\\\\" /Fd"cmTC_98fdf.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auk98r\\CheckFunctionExists.c"
-          CheckFunctionExists.c
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auk98r\\Debug\\cmTC_98fdf.exe" /INCREMENTAL /ILK:"cmTC_98fdf.dir\\Debug\\cmTC_98fdf.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-auk98r/Debug/cmTC_98fdf.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-auk98r/Debug/cmTC_98fdf.lib" /MACHINE:X64  /machine:x64 cmTC_98fdf.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auk98r\\cmTC_98fdf.vcxproj]
-        Die Erstellung des Projekts "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auk98r\\cmTC_98fdf.vcxproj" ist abgeschlossen (Standardziele) -- FEHLER.
-        
-        Fehler beim Buildvorgang.
-        
-        "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auk98r\\cmTC_98fdf.vcxproj" (Standardziel) (1) ->
-        (Link Ziel) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auk98r\\cmTC_98fdf.vcxproj]
-        
-            0 Warnung(en)
-            1 Fehler
-        
-        Verstrichene Zeit 00:00:00.28
-        
-      exitCode: 1
+      exitCode: 2
   -
     kind: "try_compile-v1"
     backtrace:
@@ -359,53 +313,69 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-7k3le5"
-      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-7k3le5"
+      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-qaviij"
+      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-qaviij"
     cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
-      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/ProgramData/clang/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-O0 -g -Xclang -gcodeview"
+      CMAKE_EXE_LINKER_FLAGS: ""
       CMAKE_MODULE_PATH: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/vendor/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-7k3le5'
+        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-qaviij'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e2f2a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild-Version 17.9.8+b34f75857 für .NET Framework
-        Der Buildvorgang wurde am 15.09.2024 21:10:29 gestartet.
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~2/GnuWin32/bin/make.exe -f Makefile cmTC_17997/fast
+        C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_17997.dir/build.make CMakeFiles/cmTC_17997.dir/build
+        make.exe[1]: Entering directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-qaviij'
+        Building C object CMakeFiles/cmTC_17997.dir/CheckFunctionExists.c.obj
+        C:/ProgramData/clang/bin/clang.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_17997.dir/CheckFunctionExists.c.obj -MF CMakeFiles/cmTC_17997.dir/CheckFunctionExists.c.obj.d -o CMakeFiles/cmTC_17997.dir/CheckFunctionExists.c.obj -c "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-qaviij/CheckFunctionExists.c"
+        Linking C executable cmTC_17997.exe
+        C:/ProgramData/clang/bin/clang.exe -fuse-ld=lld-link -nostartfiles -nostdlib  -DCHECK_FUNCTION_EXISTS=pthread_create -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -Xlinker /subsystem:console @CMakeFiles/cmTC_17997.dir/objects1.rsp -o cmTC_17997.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:cmTC_17997.lib -Xlinker /pdb:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-qaviij/cmTC_17997.pdb" -Xlinker /version:0.0  @CMakeFiles/cmTC_17997.dir/linkLibs.rsp 
+        lld-link: error: could not open 'pthread.lib': no such file or directory
+        clang: error: linker command failed with exit code 1 (use -v to see invocation)
+        make.exe[1]: *** [cmTC_17997.exe] Fehler 1
+        make.exe[1]: Leaving directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-qaviij'
+        make.exe: *** [cmTC_17997/fast] Fehler 2
         
-        Projekt "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7k3le5\\cmTC_e2f2a.vcxproj" auf Knoten "1" (Standardziele).
-        PrepareForBuild:
-          Das Verzeichnis "cmTC_e2f2a.dir\\Debug\\" wird erstellt.
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Das Verzeichnis "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7k3le5\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_e2f2a.dir\\Debug\\cmTC_e2f2a.tlog\\" wird erstellt.
-        InitializeBuildStatus:
-          "cmTC_e2f2a.dir\\Debug\\cmTC_e2f2a.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
-          Aktualisieren des Timestamps von "cmTC_e2f2a.dir\\Debug\\cmTC_e2f2a.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e2f2a.dir\\Debug\\\\" /Fd"cmTC_e2f2a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7k3le5\\CheckFunctionExists.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33523 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e2f2a.dir\\Debug\\\\" /Fd"cmTC_e2f2a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7k3le5\\CheckFunctionExists.c"
-          CheckFunctionExists.c
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7k3le5\\Debug\\cmTC_e2f2a.exe" /INCREMENTAL /ILK:"cmTC_e2f2a.dir\\Debug\\cmTC_e2f2a.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-7k3le5/Debug/cmTC_e2f2a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-7k3le5/Debug/cmTC_e2f2a.lib" /MACHINE:X64  /machine:x64 cmTC_e2f2a.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7k3le5\\cmTC_e2f2a.vcxproj]
-        Die Erstellung des Projekts "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7k3le5\\cmTC_e2f2a.vcxproj" ist abgeschlossen (Standardziele) -- FEHLER.
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:136 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:179 (_threads_check_flag_pthread)"
+      - "vendor/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Check if compiler accepts -pthread"
+    directories:
+      source: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-wtw1tu"
+      binary: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-wtw1tu"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "C:/ProgramData/clang/bin/clang-scan-deps.exe"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-O0 -g -Xclang -gcodeview"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/vendor/glfw/CMake/modules"
+    buildResult:
+      variable: "THREADS_HAVE_PTHREAD_ARG"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-wtw1tu'
         
-        Fehler beim Buildvorgang.
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/PROGRA~2/GnuWin32/bin/make.exe -f Makefile cmTC_a1aa8/fast
+        C:/PROGRA~2/GnuWin32/bin/make.exe  -f CMakeFiles/cmTC_a1aa8.dir/build.make CMakeFiles/cmTC_a1aa8.dir/build
+        make.exe[1]: Entering directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-wtw1tu'
+        Building C object CMakeFiles/cmTC_a1aa8.dir/CheckForPthreads.c.obj
+        C:/ProgramData/clang/bin/clang.exe   -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/cmTC_a1aa8.dir/CheckForPthreads.c.obj -MF CMakeFiles/cmTC_a1aa8.dir/CheckForPthreads.c.obj.d -o CMakeFiles/cmTC_a1aa8.dir/CheckForPthreads.c.obj -c "C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-wtw1tu/CheckForPthreads.c"
+        C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-wtw1tu/CheckForPthreads.c:1:10: fatal error: 'pthread.h' file not found
+            1 | #include <pthread.h>
+              |          ^~~~~~~~~~~
+        1 error generated.
+        make.exe[1]: *** [CMakeFiles/cmTC_a1aa8.dir/CheckForPthreads.c.obj] Fehler 1
+        make.exe[1]: Leaving directory `C:/Users/LeonS/Desktop/Game Dev/Games/Platformer Test/build/CMakeFiles/CMakeScratch/TryCompile-wtw1tu'
+        make.exe: *** [cmTC_a1aa8/fast] Fehler 2
         
-        "C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7k3le5\\cmTC_e2f2a.vcxproj" (Standardziel) (1) ->
-        (Link Ziel) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\LeonS\\Desktop\\Game Dev\\Games\\Platformer Test\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7k3le5\\cmTC_e2f2a.vcxproj]
-        
-            0 Warnung(en)
-            1 Fehler
-        
-        Verstrichene Zeit 00:00:00.29
-        
-      exitCode: 1
+      exitCode: 2
 ...
