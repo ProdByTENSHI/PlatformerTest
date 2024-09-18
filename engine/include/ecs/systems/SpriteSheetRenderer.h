@@ -3,20 +3,17 @@
 #include <vector>
 
 #include "ecs/System.h"
-#include "resources/Shader.h"
 #include "render/SpriteSheetBatch.h"
+#include "resources/Shader.h"
 
-namespace tenshi
-{
-	class SpriteSheetRenderer : public System
-	{
-	public:
-		SpriteSheetRenderer(Signature signature, u8 id);
+namespace tenshi {
+class SpriteSheetRenderer : public System {
+public:
+  SpriteSheetRenderer(Signature signature, u8 id);
 
-		void Render(Shader& shader);
+  void Render(Shader &shader);
 
-	private:
-		std::vector<SpriteSheetBatch*> m_Batches;
-
-	};
-}
+private:
+  std::vector<SpriteSheetBatch *> m_Batches;
+};
+} // namespace tenshi

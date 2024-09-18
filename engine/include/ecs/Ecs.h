@@ -1,101 +1,103 @@
 #pragma once
 
-#include <type_traits>
-#include <memory>
-#include <map>
-#include <stack>
 #include <iostream>
+#include <map>
+#include <memory>
+#include <stack>
+#include <type_traits>
 
-#include "tenshiUtil/Types.h"
-#include "ecs/ECS_Definitions.h"
 #include "ecs/Component.h"
-#include "ecs/System.h"
 #include "ecs/ComponentArray.h"
+#include "ecs/ECS_Definitions.h"
+#include "ecs/System.h"
 #include "ecs/systems/SpriteRenderer.h"
 #include "ecs/systems/SpriteSheetRenderer.h"
+#include "tenshiUtil/Types.h"
 
-namespace tenshi
-{
-	template <typename Derived> concept IsBaseOfComponent = std::is_base_of<Component, Derived>::value;
-	template <typename Derived> concept IsBaseOfSystem = std::is_base_of<System, Derived>::value;
+namespace tenshi {
+template <typename Derived>
+concept IsBaseOfComponent = std::is_base_of<Component, Derived>::value;
+template <typename Derived>
+concept IsBaseOfSystem = std::is_base_of<System, Derived>::value;
 
-	class Ecs
-	{
-	public:
-		Ecs();
-		~Ecs();
+class Ecs {
+public:
+  Ecs();
+  ~Ecs();
 
-		Entity CreateEntity();
-		void DestroyEntity(Entity entity);
-		void Init();
+  Entity CreateEntity();
+  void DestroyEntity(Entity entity);
+  void Init();
 
-	public:
-		template <IsBaseOfComponent T> void AddComponent(Entity entity, T& component)
-		{
-			ComponentType _type = component.GetType();
-			if (_type == ComponentType::InvalidType)
-			{
-				std::cout << "[ECS] Cannot add Base Component to Entity " << entity << std::endl;
-				return;
-			}
+public:
+  template <IsBaseOfComponent T>
+  void AddComponent(Entity entity, T &component) {
+    ComponentType _type = component.GetType();
+    if (_type == ComponentType::InvalidType) {
+      std::cout << "[ECS] Cannot add Base Component to Entity " << entity
+                << std::endl;
+      return;
+    }
 
-			const char* _typeName = typeid(T).name();
-			if (m_ComponentArrays.find(_typeName) == m_ComponentArrays.end())
-				m_ComponentArrays.insert(std::make_pair(_typeName, new ComponentArray<T>()));
+    const char *_typeName = typeid(T).name();
+    if (m_ComponentArrays.find(_typeName) == m_ComponentArrays.end())
+      m_ComponentArrays.insert(
+          std::make_pair(_typeName, new ComponentArray<T>()));
 
-			m_ComponentArrays[_typeName]->m_EntityToComponent
-				.insert(std::make_pair(entity, &component));
-			m_EntitySignatures[entity].set(_type);
-			m_OnEntitySignatureChange.Dispatch(entity, m_EntitySignatures[entity]);
+    m_ComponentArrays[_typeName]->m_EntityToComponent.insert(
+        std::make_pair(entity, &component));
+    m_EntitySignatures[entity].set(_type);
+    m_OnEntitySignatureChange.Dispatch(entity, m_EntitySignatures[entity]);
 
-			std::cout << "[ECS] Added Component of Type " << _typeName 
-			<< " to Entity " << entity << std::endl;
-		}
+    std::cout << "[ECS] Added Component of Type " << _typeName << " to Entity "
+              << entity << std::endl;
+  }
 
-		template <IsBaseOfComponent T> void RemoveComponent(Entity entity, ComponentType type)
-		{
-			m_ComponentArrays[typeid(T).name()]->m_EntityToComponent.erase(entity);
-			m_EntitySignatures[entity].set(type, false);
-			m_OnEntitySignatureChange.Dispatch(entity, m_EntitySignatures[entity]);
-		}
+  template <IsBaseOfComponent T>
+  void RemoveComponent(Entity entity, ComponentType type) {
+    m_ComponentArrays[typeid(T).name()]->m_EntityToComponent.erase(entity);
+    m_EntitySignatures[entity].set(type, false);
+    m_OnEntitySignatureChange.Dispatch(entity, m_EntitySignatures[entity]);
+  }
 
-		// Pretty Expensive Operation so use this once, Cache the Pointer instead of every Frame
-		template <IsBaseOfComponent T> T* GetComponent(Entity entity)
-		{
-			return dynamic_cast<T*>(m_ComponentArrays[typeid(T).name()]
-				->m_EntityToComponent[entity]);
-		}
+  // Pretty Expensive Operation so use this once, Cache the Pointer instead of
+  // every Frame
+  template <IsBaseOfComponent T> T *GetComponent(Entity entity) {
+    return dynamic_cast<T *>(
+        m_ComponentArrays[typeid(T).name()]->m_EntityToComponent[entity]);
+  }
 
-		template <IsBaseOfSystem T> std::unique_ptr<System> CreateSystem(Signature signature)
-		{
-			std::unique_ptr<T> system = std::make_unique<T>(signature, m_Systems.size());
-			m_Systems.insert(std::make_pair(system->m_Id, system));
-		}
+  template <IsBaseOfSystem T>
+  std::unique_ptr<System> CreateSystem(Signature signature) {
+    std::unique_ptr<T> system =
+        std::make_unique<T>(signature, m_Systems.size());
+    m_Systems.insert(std::make_pair(system->m_Id, system));
+  }
 
-		void Serialize();
-		void Deserialize();
+  void Serialize();
+  void Deserialize();
 
-	public:
-		// -- SYSTEMS
-		Event<Entity, Signature> m_OnEntitySignatureChange;
+public:
+  // -- SYSTEMS
+  Event<Entity, Signature> m_OnEntitySignatureChange;
 
-		std::unique_ptr<SpriteRenderer> m_SpriteRenderer;
-		std::unique_ptr<SpriteSheetRenderer> m_SpriteSheetRenderer;
+  std::unique_ptr<SpriteRenderer> m_SpriteRenderer;
+  std::unique_ptr<SpriteSheetRenderer> m_SpriteSheetRenderer;
 
-	private:
-		// Holds Component Arrays by their typename
-		std::map<const char*, BaseComponentArray*> m_ComponentArrays;
-		std::map<u8, std::unique_ptr<System>> m_Systems;
-		std::map<Entity, Signature> m_EntitySignatures;
-		std::stack<Entity> m_EntityIdStack;
+private:
+  // Holds Component Arrays by their typename
+  std::map<const char *, BaseComponentArray *> m_ComponentArrays;
+  std::map<u8, std::unique_ptr<System>> m_Systems;
+  std::map<Entity, Signature> m_EntitySignatures;
+  std::stack<Entity> m_EntityIdStack;
 
-		u32 m_EntityCount = 0;
+  u32 m_EntityCount = 0;
 
-		const std::string ENTITIES_DATA_PATH = "entities.json";
+  const std::string ENTITIES_DATA_PATH = "entities.json";
 
-	private:
-		void InitSystems();
+private:
+  void InitSystems();
 
-		Entity GetNextEntityId();
-	};
-}
+  Entity GetNextEntityId();
+};
+} // namespace tenshi
