@@ -13,7 +13,6 @@ namespace tenshi
 		if (m_ShaderCache.find(name) != m_ShaderCache.end())
 			return m_ShaderCache[name];
 
-		std::cout << "OS SEP" << OS_SEP << std::endl;
 		std::string _loc = SHADER_LOCATION;
 		_loc += OS_SEP;
 		_loc.append(name);

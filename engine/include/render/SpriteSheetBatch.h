@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <memory>
 
+#include "ecs/ECS_Definitions.h"
 #include "resources/Texture.h"
 #include "tenshiUtil/container/STLUtil.h"
 
@@ -49,12 +50,12 @@ namespace tenshi
 			for (i32 i = 0; i < m_FrameToEntityId.size(); i++)
 			{
 				std::vector<Entity>& entities = m_FrameToEntityId[i];
-				for (auto& entity : entities)
+				for (auto& _entity : entities)
 				{
-					if (entity != entity)
+					if (entity != _entity)
 						continue;
 
-					std::vector<u32>::iterator _it = STLUtil::GetItOfElementInVec<Entity>(entities, entity);
+					std::vector<u32>::iterator _it = STLUtil::GetItOfElementInVec<Entity>(entities, _entity);
 					entities.erase(_it);
 				}
 			}

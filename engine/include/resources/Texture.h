@@ -28,7 +28,7 @@ namespace tenshi
 			return m_Height;
 		}
 
-		const std::string_view& GetName() const
+		const std::string& GetName() const
 		{
 			return m_Name;
 		}

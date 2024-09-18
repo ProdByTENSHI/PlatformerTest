@@ -47,6 +47,9 @@ namespace tenshi
 				.insert(std::make_pair(entity, &component));
 			m_EntitySignatures[entity].set(_type);
 			m_OnEntitySignatureChange.Dispatch(entity, m_EntitySignatures[entity]);
+
+			std::cout << "[ECS] Added Component of Type " << _typeName 
+			<< " to Entity " << entity << std::endl;
 		}
 
 		template <IsBaseOfComponent T> void RemoveComponent(Entity entity, ComponentType type)
